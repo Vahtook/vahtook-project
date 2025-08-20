@@ -36,7 +36,7 @@ function App() {
               title="Get in Touch"
               description1="We would like to hear from you!"
               description2="If you have any inquiries or just want to connect, please use the contact form!"
-              email="rahul.jagtap@vahtook.com"
+              email="info@vahtook.com"
               instagramUrl="https://instagram.com/yourhandle"
             />
           }
