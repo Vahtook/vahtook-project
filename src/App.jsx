@@ -1,7 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DriverPartnerForm from "./pages/DriverPartner";
 import Navbar from "./components/Navbar";
 import HeroSection from "./pages/Home";
+
+import DriverPartnerForm from "./pages/DriverPartner";
+import Contact from "./pages/Contact";
+import Services from "./pages/Services";
+import WhyChooseUs from "./pages/WhyChooseUs";
 
 function App() {
   return (
@@ -23,6 +27,22 @@ function App() {
           path="/support"
           element={<h1 className="p-8 text-3xl font-bold">Support Page</h1>}
         />
+
+        
+        <Route
+          path="/contact"
+          element={
+            <Contact
+              title="Get in Touch"
+              description1="We would like to hear from you!"
+              description2="If you have any inquiries or just want to connect, please use the contact form!"
+              email="rahul.jagtap@vahtook.com"
+              instagramUrl="https://instagram.com/yourhandle"
+            />
+          }
+        />
+        <Route path="/services" element={<Services />} />
+        <Route path="/why-choose-us" element={<WhyChooseUs />} />
       </Routes>
     </Router>
   );
