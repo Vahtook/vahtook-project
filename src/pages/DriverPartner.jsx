@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 // Field Component
 function Field({ label, error, children }) {
   return (
@@ -65,21 +66,49 @@ export default function DriverPartnerForm() {
     }
   };
 
+  // Handle second submit (reset or any other action)
+  const handleSecondSubmit = () => {
+    alert("Second submit button clicked!");
+    // Example: reset the form
+    setForm({
+      fullName: "",
+      email: "",
+      phone: "",
+      city: "",
+      vehicleType: "",
+      experience: "",
+      serviceAreas: "",
+      documents: null,
+      agree: false,
+    });
+    setSubmitted(false);
+    setErrors({});
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fff7ed] to-[#fefce8] flex items-center justify-center px-4">
       <div className="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-8">
-        <h1 className="text-3xl font-bold text-center text-[#ff9d00] mb-2">
-          Vaht∞k Driver Partner Registration
-        </h1>
+        <h1 className="text-3xl font-bold text-center mb-2">
+           <span className="text-[#ff9d00]">Vaht∞k</span>{" "}
+           <span className="text-black">Driver Partner Registration</span>
+         </h1>
         <p className="text-center text-slate-600 mb-6">
           Join Vaht∞k and grow your logistics business with us!
         </p>
 
         {submitted ? (
-          <div className="text-center py-6">
+          <div className="text-center py-6 space-y-4">
             <p className="text-green-600 font-medium">
               🎉 Thank you! Your registration has been submitted successfully.
             </p>
+
+            {/* Second Submit Button */}
+            <button
+              onClick={handleSecondSubmit}
+              className="bg-[#ff9d00] text-white py-2 px-6 rounded-lg font-medium hover:bg-[#e68c00] transition"
+            >
+              Submit Again
+            </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -189,6 +218,66 @@ export default function DriverPartnerForm() {
             </Field>
 
             {/* Terms & Conditions */}
+            <div className="border rounded-lg p-4 max-h-48 overflow-y-scroll text-sm text-slate-700 bg-slate-50">
+              <h2 className="font-semibold mb-2">Terms and Conditions *</h2>
+              <p>
+                <strong>1. Purpose</strong> The Fleet Owner agrees to provide
+                vehicles for transportation and logistics services as and when
+                required by the Company.
+              </p>
+              <p className="mt-2">
+                <strong>2. Vehicle & Driver Obligations</strong> The Fleet Owner
+                shall:
+                <br /> (a) provide vehicles in roadworthy condition with valid
+                registration, insurance, permits and fitness;
+                <br /> (b) ensure that drivers hold valid driving licences and
+                comply with all traffic and safety laws;
+                <br /> (c) remain solely responsible for engaging drivers,
+                making trip-wise payments to them, and ensuring compliance with
+                all applicable statutory requirements;
+                <br /> (d) ensure timely availability and cleanliness of
+                vehicles.
+              </p>
+              <p className="mt-2">
+                <strong>3. Rate Per Kilometer</strong> The rate payable shall be
+                ₹ 25 / KM, mutually agreed at the time of onboarding and subject
+                to revision by mutual consent.
+              </p>
+              <p className="mt-2">
+                <strong>4. Trip & Distance Calculation</strong> Pickup and drop
+                points shall be communicated verbally by the Company. Distance
+                shall be calculated by the Company’s operations team and such
+                calculation shall be final and binding.
+              </p>
+              <p className="mt-2">
+                <strong>5. Payment Terms</strong>
+                <br /> (a) Payment shall be made within 7 days from completion
+                of trip or submission of invoice;
+                <br /> (b) The Company may deduct amounts towards penalties,
+                damages or breaches;
+                <br /> (c) No advance payment shall be made unless specifically
+                agreed in writing.
+              </p>
+              <p className="mt-2">
+                <strong>6. Liability & Indemnity</strong> The Fleet Owner shall
+                be solely liable for any accident, damage, loss or legal
+                violation arising out of the vehicle or driver and shall
+                indemnify and hold harmless the Company against any third-party
+                claims.
+              </p>
+              <p className="mt-2">
+                <strong>7. Term & Termination</strong> This Agreement shall
+                remain in force unless terminated by either Party by giving
+                seven (7) days’ written notice. Termination shall not affect
+                accrued rights or liabilities of either Party.
+              </p>
+              <p className="mt-2">
+                <strong>8. Governing Law & Jurisdiction</strong> This Agreement
+                shall be governed by the laws of India and the courts at Nashik,
+                Maharashtra shall have exclusive jurisdiction.
+              </p>
+            </div>
+
             <div className="flex items-center gap-2">
               <input
                 id="agree"
@@ -199,7 +288,7 @@ export default function DriverPartnerForm() {
                 className="h-4 w-4 rounded border-slate-300 text-[#ff9d00] focus:ring-[#ff9d00]"
               />
               <label htmlFor="agree" className="text-sm text-slate-700">
-                I agree to the terms & conditions
+                I agree to the Terms & Conditions set out by Vaht∞k
               </label>
             </div>
             {errors.agree && (
