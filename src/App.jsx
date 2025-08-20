@@ -1,12 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DriverPartnerForm from "./pages/DriverPartner";
 import Navbar from "./components/Navbar";
+import HeroSection from "./pages/Home";
 
 function App() {
   return (
     <Router>
       {/* Navbar always visible */}
       <Navbar />
+      
+      {/* Hero Section */}
+      <HeroSection />
 
       {/* Routes */}
       <Routes>
