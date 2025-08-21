@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen bg-orange-500 bg-hero-gradient overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-[#EB9900] via-[#FF9D00] to-[#E67E00] overflow-hidden">
 
       {/* Background decorative elements */}
       <div className="absolute inset-0">
@@ -20,7 +20,7 @@ const HeroSection = () => {
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.3] tracking-tight">
                 <div className="text-gray-900 mb-2">Heavy or Light</div>
-                <div className="bg-gradient-to-r from-white via-white to-white/90 bg-clip-text text-transparent drop-shadow-lg py-1">
+                <div className="bg-gradient-to-r from-white via-white to-white/90 bg-clip-text text-transparent drop-shadow-lg py-1 whitespace-nowrap">
                   We Move It Right
                 </div>
               </h1>
@@ -73,7 +73,7 @@ const HeroSection = () => {
                     <input
                       type="text"
                       placeholder="Enter pickup address"
-                      className="w-full pl-9 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-logistics-orange focus:border-logistics-orange outline-none transition-all text-sm text-gray-900 bg-white hover:border-gray-400 placeholder-gray-500"
+                      className="w-full pl-9 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-brand-orange focus:border-brand-orange outline-none transition-all text-sm text-gray-900 bg-white hover:border-gray-400 placeholder-gray-500"
                     />
                   </div>
                 </div>
@@ -94,7 +94,7 @@ const HeroSection = () => {
                     <input
                       type="text"
                       placeholder="Enter destination"
-                      className="w-full pl-9 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-logistics-orange focus:border-logistics-orange outline-none transition-all text-sm text-gray-900 bg-white hover:border-gray-400 placeholder-gray-500"
+                      className="w-full pl-9 pr-3 py-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-brand-orange focus:border-brand-orange outline-none transition-all text-sm text-gray-900 bg-white hover:border-gray-400 placeholder-gray-500"
                     />
                   </div>
                 </div>
@@ -113,7 +113,7 @@ const HeroSection = () => {
                       <input
                         type="date"
                         defaultValue={new Date().toISOString().split('T')[0]}
-                        className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-logistics-orange focus:border-logistics-orange outline-none transition-all text-sm text-gray-900 bg-white hover:border-gray-400"
+                        className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-brand-orange focus:border-brand-orange outline-none transition-all text-sm text-gray-900 bg-white hover:border-gray-400"
                       />
                     </div>
 
@@ -122,7 +122,7 @@ const HeroSection = () => {
                       <input
                         type="time"
                         defaultValue={new Date().toTimeString().slice(0,5)}
-                        className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-logistics-orange focus:border-logistics-orange outline-none transition-all text-sm text-gray-900 bg-white hover:border-gray-400"
+                        className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-brand-orange focus:border-brand-orange outline-none transition-all text-sm text-gray-900 bg-white hover:border-gray-400"
                       />
                     </div>
                   </div>
@@ -137,7 +137,7 @@ const HeroSection = () => {
                     <label className="text-xs font-medium text-gray-800 uppercase tracking-wide">Vehicle type</label>
                   </div>
                   <div className="relative">
-                    <select className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-logistics-orange focus:border-logistics-orange outline-none transition-all appearance-none bg-white hover:border-gray-400 text-sm text-gray-900">
+                    <select className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-1 focus:ring-brand-orange focus:border-brand-orange outline-none transition-all appearance-none bg-white hover:border-gray-400 text-sm text-gray-900">
                       <option value="">Select vehicle type</option>
                       <option value="van">Van</option>
                       <option value="truck">Truck</option>
@@ -154,7 +154,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Book Now Button */}
-                <button className="w-full bg-logistics-orange hover:bg-logistics-orange-dark text-white py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 mt-2">
+                <button className="w-full bg-brand-orange hover:bg-orange-600 text-white py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 mt-2">
                   Book Now
                 </button>
               </div>
@@ -166,4 +166,137 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+const FAQSection = () => {
+  const [openItems, setOpenItems] = useState({});
+
+  const toggleItem = (index) => {
+    setOpenItems(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
+  const faqData = [
+    {
+      question: "What weight categories of vehicles are available for booking?",
+      answer: "We offer vehicles across multiple weight categories: Light-duty vehicles (up to 3.5 tons) including vans and small trucks, Medium-duty vehicles (3.5-7.5 tons) for larger cargo loads, Heavy-duty vehicles (7.5-26 tons) for industrial transportation, and Extra-heavy vehicles (26+ tons) for specialized heavy cargo and construction materials."
+    },
+    {
+      question: "How do I choose the right vehicle size for my cargo weight?",
+      answer: "Our smart booking system helps you select the optimal vehicle based on your cargo specifications. Simply enter your cargo weight, dimensions, and type during booking. Light cargo (under 500kg) works with vans, medium loads (500kg-2 tons) require small trucks, heavy items (2-10 tons) need medium trucks, and industrial cargo (10+ tons) requires our heavy-duty fleet."
+    },
+    {
+      question: "What's the maximum weight capacity for each vehicle type?",
+      answer: "Our fleet includes: Cargo vans (up to 1,500kg), Small trucks (up to 3,500kg), Medium trucks (up to 7,500kg), Large trucks (up to 26,000kg), and Heavy haul trucks (26,000kg+). Each vehicle listing shows exact payload capacity, dimensions, and specialized equipment available."
+    },
+    {
+      question: "Are there additional fees for heavy cargo transportation?",
+      answer: "Pricing varies by vehicle category and cargo specifications. Light-duty vehicles have standard rates, while heavy-duty transportation may include additional fees for specialized handling, permits, or escort vehicles. Our transparent pricing shows all costs upfront during booking, including any weight-based surcharges or special equipment fees."
+    },
+    {
+      question: "Do you provide loading equipment for different weight categories?",
+      answer: "Yes, we provide appropriate loading equipment based on your cargo weight. This includes hand trucks and dollies for light items, hydraulic lift gates for medium loads, forklifts and cranes for heavy cargo, and specialized rigging equipment for extra-heavy items. Equipment availability is shown during vehicle selection."
+    },
+    {
+      question: "What safety measures are in place for heavy cargo transport?",
+      answer: "Our heavy cargo transport includes comprehensive safety protocols: weight distribution analysis, proper cargo securing with rated tie-downs, load stability checks, route planning for weight restrictions, certified drivers with heavy vehicle endorsements, and real-time monitoring. All vehicles undergo regular safety inspections and maintenance."
+    }
+  ];
+
+  return (
+    <div className="py-16 bg-gray-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center mb-6">
+            <span className="text-brand-orange font-semibold text-lg">Questions? Look here.</span>
+          </div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Everything you need to know about our logistics services.
+          </p>
+        </div>
+
+        {/* FAQ Items */}
+        <div className="space-y-4">
+          {faqData.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md"
+            >
+              {/* Question Button */}
+              <button
+                onClick={() => toggleItem(index)}
+                className="w-full px-5 py-4 text-left flex items-center group focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2 transition-all duration-200"
+              >
+                <div className="flex items-center space-x-3 w-full">
+                  <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all duration-200 flex-shrink-0 ${
+                    openItems[index] 
+                      ? 'bg-brand-orange text-white' 
+                      : 'bg-orange-100 text-brand-orange group-hover:bg-orange-200'
+                  }`}>
+                    <svg 
+                      className={`w-3 h-3 transition-transform duration-200 ${
+                        openItems[index] ? 'rotate-45' : 'rotate-0'
+                      }`} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-base font-medium text-gray-900 group-hover:text-brand-orange transition-colors duration-200">
+                    {item.question}
+                  </h3>
+                </div>
+              </button>
+
+              {/* Answer Content */}
+              <div className={`transition-all duration-300 ease-in-out ${
+                openItems[index] 
+                  ? 'max-h-96 opacity-100' 
+                  : 'max-h-0 opacity-0'
+              } overflow-hidden`}>
+                <div className="px-5 pb-5 pt-2">
+                  <div className="ml-9 mr-2">
+                    <div className="bg-gray-50 rounded-lg p-4 border-l-4 border-brand-orange">
+                      <p className="text-gray-700 leading-7 text-base">
+                        {item.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Contact Section */}
+        <div className="mt-10 text-center">
+          <div className="bg-orange-50 rounded-lg p-6 border border-orange-200">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Still have questions?
+            </h3>
+            <p className="text-gray-600 mb-4 text-sm">
+              Our logistics experts are here to help you choose the right vehicle for your needs.
+            </p>
+            <button className="bg-[#EB9900] hover:bg-[#d68600] text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#EB9900] focus:ring-offset-2">
+              Contact Support
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Home = () => {
+  return (
+    <div>
+      <HeroSection />
+      <FAQSection />
+    </div>
+  );
+};
+
+export default Home;
