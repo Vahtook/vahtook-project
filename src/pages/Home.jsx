@@ -204,6 +204,188 @@ const FAQSection = () => {
   ];
 
   return (
+    <div>
+    
+    {/* ///////////////////////////////////////////////////////////////////////////// */}
+    
+      {/*services */}
+   <div className="py-16 px-6 bg-white text-center">
+   <h1 className="text-4xl font-bold text-gray-800">Our Services</h1>
+   <p className="text-gray-500 mt-2 text-lg">
+    Choose the service that fits your needs
+  </p>
+
+  <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    {/* Card 1 */}
+    <div className="border rounded-2xl p-6 max-w-xs mx-auto shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-2 bg-white">
+      <div className="flex justify-center">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 text-xl shadow-inner">
+          <i className="fas fa-building"></i>
+        </div>
+      </div>
+      <h3 className="mt-4 text-lg font-semibold text-gray-800">
+        Vahtook for Brands
+      </h3>
+      <p className="text-gray-500 mt-2 text-sm leading-relaxed">
+        Enterprise logistics solutions for businesses of all sizes
+      </p>
+      <ul className="mt-5 flex flex-col items-center gap-2 text-gray-700 font-medium">
+        <li className="flex items-center gap-2 whitespace-nowrap">
+          <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+          Bulk shipments
+        </li>
+        <li className="flex items-center gap-2 whitespace-nowrap">
+          <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+          Priority support
+        </li>
+        <li className="flex items-center gap-2 whitespace-nowrap">
+          <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+          Custom pricing
+        </li>
+      </ul>
+    </div>
+
+    {/* Card 2 */}
+    <div className="border rounded-2xl p-6 max-w-xs mx-auto shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-2 bg-white">
+      <div className="flex justify-center">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 text-xl shadow-inner">
+          <i className="fas fa-user"></i>
+        </div>
+      </div>
+      <h3 className="mt-4 text-lg font-semibold text-gray-800">
+        Vahtook for Individuals
+      </h3>
+      <p className="text-gray-500 mt-2 text-sm leading-relaxed">
+        Personal delivery and moving services for your everyday needs
+      </p>
+      <ul className="mt-5 flex flex-col items-center gap-2 text-gray-700 font-medium">
+        <li className="flex items-center gap-2 whitespace-nowrap">
+          <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+          Home delivery
+        </li>
+        <li className="flex items-center gap-2 whitespace-nowrap">
+          <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+          Personal moves
+        </li>
+        <li className="flex items-center gap-2 whitespace-nowrap">
+          <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+          Instant booking
+        </li>
+      </ul>
+    </div>
+
+    {/* Card 3 */}
+    <div className="border rounded-2xl p-6 max-w-xs mx-auto shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-2 bg-white">
+      <div className="flex justify-center">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 text-xl shadow-inner">
+          <i className="fas fa-users"></i>
+        </div>
+      </div>
+      <h3 className="mt-4 text-lg font-semibold text-gray-800">
+        Vahtook for SMEs
+      </h3>
+      <p className="text-gray-500 mt-2 text-sm leading-relaxed">
+        Tailored logistics solutions for small and medium enterprises
+      </p>
+      <ul className="mt-5 flex flex-col items-center gap-2 text-gray-700 font-medium">
+        <li className="flex items-center gap-2 whitespace-nowrap">
+          <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+          Flexible plans
+        </li>
+        <li className="flex items-center gap-2 whitespace-nowrap">
+          <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+          Business accounts
+        </li>
+        <li className="flex items-center gap-2 whitespace-nowrap">
+          <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+          Volume discounts
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{/* WhyChooseUs */}
+<div className="py-16 px-6 bg-gray-50 text-center">
+      {/* Heading */}
+      <h1 className="text-4xl font-extrabold text-gray-800">
+        Why Choose <span className="text-orange-500">Vahtook?</span>
+      </h1>
+      <p className="text-gray-600 mt-3 text-lg">
+        We're committed to providing the <span className="font-semibold">best logistics experience</span>
+      </p>
+
+      {/* Grid */}
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* Item 1 */}
+        <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+          <div className="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-xl text-orange-500 text-2xl">
+            <i className="fas fa-shield-alt"></i>
+          </div>
+          <div className="text-left">
+            <h3 className="font-bold text-gray-800 text-lg">Safe & Secure</h3>
+            <p className="text-gray-500 text-sm">Your items are insured and handled with utmost care</p>
+          </div>
+        </div>
+
+        {/* Item 2 */}
+        <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+          <div className="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-xl text-orange-500 text-2xl">
+            <i className="fas fa-clock"></i>
+          </div>
+          <div className="text-left">
+            <h3 className="font-bold text-gray-800 text-lg">Fast Delivery</h3>
+            <p className="text-gray-500 text-sm">Quick and efficient delivery solutions for urgent needs</p>
+          </div>
+        </div>
+
+        {/* Item 3 */}
+        <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+          <div className="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-xl text-orange-500 text-2xl">
+            <i className="fas fa-dollar-sign"></i>
+          </div>
+          <div className="text-left">
+            <h3 className="font-bold text-gray-800 text-lg">Best Prices</h3>
+            <p className="text-gray-500 text-sm">Competitive pricing with transparent cost structure</p>
+          </div>
+        </div>
+
+        {/* Item 4 */}
+        <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+          <div className="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-xl text-orange-500 text-2xl">
+            <i className="fas fa-star"></i>
+          </div>
+          <div className="text-left">
+            <h3 className="font-bold text-gray-800 text-lg">Top Rated</h3>
+            <p className="text-gray-500 text-sm">Highly rated by thousands of satisfied customers</p>
+          </div>
+        </div>
+
+        {/* Item 5 */}
+        <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+          <div className="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-xl text-orange-500 text-2xl">
+            <i className="fas fa-truck"></i>
+          </div>
+          <div className="text-left">
+            <h3 className="font-bold text-gray-800 text-lg">Reliable Fleet</h3>
+            <p className="text-gray-500 text-sm">Well-maintained vehicles and professional drivers</p>
+          </div>
+        </div>
+
+        {/* Item 6 */}
+        <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+          <div className="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-xl text-orange-500 text-2xl">
+            <i className="fas fa-phone-alt"></i>
+          </div>
+          <div className="text-left">
+            <h3 className="font-bold text-gray-800 text-lg">24/7 Support</h3>
+            <p className="text-gray-500 text-sm">Round-the-clock customer support for all your queries</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    {/* //////////////////////////////////////////////////////////////////// */}
     <div className="py-16 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -270,7 +452,7 @@ const FAQSection = () => {
             </div>
           ))}
         </div>
-
+{/* ///////////////////////////////////////////////////////////////////////////////////////////// */}
         {/* Contact Section */}
         <div className="mt-10 text-center">
           <div className="bg-orange-50 rounded-lg p-6 border border-orange-200">
@@ -286,6 +468,7 @@ const FAQSection = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

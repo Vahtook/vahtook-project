@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import vahtookLogo from "../assets/vahtook-logo.png";
+import vahtookLogo from "../assets/new-logo.png";
 
 const Navbar = () => {
   return (
@@ -14,7 +14,7 @@ const Navbar = () => {
               <img
                 src={vahtookLogo}
                 alt="Vahtook Logo"
-                className="h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity duration-300"
+                className="w-[90px] h-auto cursor-pointer hover:opacity-80 transition-opacity duration-300"
               />
             </Link>
           </div>
@@ -24,7 +24,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/business-partner"
-                className="hover:text-yellow-400 transition-colors duration-300"
+                className="hover:text-[#ff9d00] transition-colors duration-300"
               >
                 Business Partner
               </Link>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import bgImage from "../assets/vahtook-driverpartner.png";
 
 // Field Component
 function Field({ label, error, children }) {
@@ -86,19 +86,20 @@ export default function DriverPartnerForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#fff7ed] to-[#fefce8] flex items-center justify-center px-4">
-      <div className="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-8">
+    
+    <div className="min-h-screen bg-gradient-to-br from-[#fff7ed] to-[#fefce8] flex items-center justify-center py-12 px-6" style={{ backgroundImage: `url(${bgImage})` }}>
+      <div className="w-full max-w-3xl bg-white shadow-xl rounded-2xl p-8">
         <h1 className="text-3xl font-bold text-center mb-2">
            <span className="text-[#ff9d00]">Vaht∞k</span>{" "}
            <span className="text-black">Driver Partner Registration</span>
          </h1>
-        <p className="text-center text-slate-600 mb-6">
+        <p className="text-center text-slate-700 mb-6">
           Join Vaht∞k and grow your logistics business with us!
         </p>
 
         {submitted ? (
           <div className="text-center py-6 space-y-4">
-            <p className="text-green-600 font-medium">
+            <p className="text-green-700 font-medium">
               🎉 Thank you! Your registration has been submitted successfully.
             </p>
 
@@ -205,6 +206,22 @@ export default function DriverPartnerForm() {
                 placeholder="List areas you serve"
               />
             </Field>
+            {/* Expected Rate */}
+<div>
+  <label className="block text-sm font-medium text-gray-700 mb-1">
+    Expected Rate (per trip/day)
+  </label>
+  <input
+    type="text"
+    name="expectedRate"
+    value={form.expectedRate}
+    onChange={handleChange}
+    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-[#ff9d00] focus:ring-[#ff9d00]"
+    placeholder="e.g., ₹500 per day or ₹100 per trip"
+    required
+  />
+</div>
+
 
             {/* File Upload */}
             <Field label="Upload Documents (optional)" error={errors.documents}>

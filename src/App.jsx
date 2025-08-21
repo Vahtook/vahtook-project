@@ -1,45 +1,31 @@
+
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import HeroSection from "./pages/Home";
-import Services from "./pages/Services";
-import WhyChooseUs from "./pages/WhyChooseUs";
-import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
 import DriverPartnerForm from "./pages/DriverPartner";
+import Contact from "./pages/Contact";
+import BusinessPartner from "./pages/BuisnessPartner";
+
 
 function App() {
   return (
     <>
+      {/* Global Navbar */}
       <Navbar />
 
-      {/* Full landing page */}
-      <section id="home">
-        <HeroSection />
-      </section>
+      {/* Route-based Pages */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/driver-partner" element={<DriverPartnerForm />} />
+        <Route path="/support" element={<Contact />} />
+        
+        <Route path="/business-partner" element={<BusinessPartner />} /> 
+        {/* Temporary — replace with actual page later */}
+      </Routes>
 
-      <section id="services">
-        <Services />
-      </section>
-
-      <section id="why">
-        <WhyChooseUs />
-      </section>
-
-      <section id="contact">
-        <Contact
-          title="Get in Touch"
-          description1="We would like to hear from you!"
-          description2="If you have any inquiries or just want to connect, please use the contact form!"
-          email="info@vahtook.com"
-          instagramUrl="https://instagram.com/yourhandle"
-        />
-      </section>
-
-      <section id="driver">
-        <DriverPartnerForm />
-      </section>
-
-      <section id="support">
-        <h1 className="p-8 text-3xl font-bold">Support Page</h1>
-      </section>
+      {/* Global Footer */}
+      <Footer />
     </>
   );
 }
