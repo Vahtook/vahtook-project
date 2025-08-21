@@ -1,7 +1,6 @@
 import Navbar from "./components/Navbar";
 import HeroSection from "./pages/Home";
 import Services from "./pages/Services";
-import WhyChooseUs from "./pages/WhyChooseUs";
 import Contact from "./pages/Contact";
 import DriverPartnerForm from "./pages/DriverPartner";
 
@@ -19,9 +18,8 @@ function App() {
         <Services />
       </section>
 
-      <section id="why">
-        <WhyChooseUs />
-      </section>
+
+
 
       <section id="contact">
         <Contact
