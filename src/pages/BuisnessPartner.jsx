@@ -38,7 +38,7 @@ export default function BusinessPartner() {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-[#fff7ed] to-[#fefce8] py-12 px-6">
+    <section className="min-h-screen bg-gradient-to-br from-[#38e4d2] to-[#fb9108] py-12 px-6">
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
         <h1 className="text-3xl font-bold text-center mb-2">
           Connect with <span className="text-[#ff9d00]">Vaht∞k</span> for Business

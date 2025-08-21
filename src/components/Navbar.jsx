@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react"; // hamburger & close icons
 import vahtookLogo from "../assets/new-logo.png";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="bg-[#002244] text-white shadow-md">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/">
@@ -19,12 +21,12 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Links on right */}
-          <ul className="flex space-x-6 ml-auto">
+          {/* Desktop Links */}
+          <ul className="hidden md:flex space-x-6 ml-auto">
             <li>
               <Link
                 to="/business-partner"
-                className="hover:text-[#ff9d00] transition-colors duration-300"
+                className="hover:text-yellow-400 transition-colors duration-300"
               >
                 Business Partner
               </Link>
@@ -46,12 +48,44 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
+
+          {/* Mobile Hamburger */}
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-[#001833] px-4 pb-4 space-y-3">
+          <Link
+            to="/business-partner"
+            onClick={() => setIsOpen(false)}
+            className="block py-2 hover:text-yellow-400 transition"
+          >
+            Business Partner
+          </Link>
+          <Link
+            to="/driver-partner"
+            onClick={() => setIsOpen(false)}
+            className="block py-2 hover:text-yellow-400 transition"
+          >
+            Driver Partner
+          </Link>
+          <Link
+            to="/support"
+            onClick={() => setIsOpen(false)}
+            className="block py-2 hover:text-yellow-400 transition"
+          >
+            Support
+          </Link>
+        </div>
+      )}
     </nav>
   );
 };
 
 export default Navbar;
-
-{/*hello world*/}

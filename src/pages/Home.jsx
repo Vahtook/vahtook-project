@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
+import { Shield, Clock, IndianRupee, Star, Truck, Phone } from "lucide-react";
+
 
 const HeroSection = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#EB9900] via-[#FF9D00] to-[#E67E00] overflow-hidden">
-
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-white/5 rounded-full blur-lg"></div>
-        <div className="absolute bottom-32 left-20 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-20 right-10 w-28 h-28 bg-white/5 rounded-full blur-xl"></div>
-      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start lg:items-center min-h-[85vh]">
@@ -219,7 +213,7 @@ const FAQSection = () => {
     {/* Card 1 */}
     <div className="border rounded-2xl p-6 max-w-xs mx-auto shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-2 bg-white">
       <div className="flex justify-center">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 text-xl shadow-inner">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 rounded-xl text-[#ff9d00] text-xl shadow-inner">
           <i className="fas fa-building"></i>
         </div>
       </div>
@@ -248,7 +242,7 @@ const FAQSection = () => {
     {/* Card 2 */}
     <div className="border rounded-2xl p-6 max-w-xs mx-auto shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-2 bg-white">
       <div className="flex justify-center">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 text-xl shadow-inner">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 rounded-xl text-[#ff9d00] text-xl shadow-inner">
           <i className="fas fa-user"></i>
         </div>
       </div>
@@ -277,7 +271,7 @@ const FAQSection = () => {
     {/* Card 3 */}
     <div className="border rounded-2xl p-6 max-w-xs mx-auto shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-2 bg-white">
       <div className="flex justify-center">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 text-xl shadow-inner">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 rounded-xl text-[#ff9d00] text-xl shadow-inner">
           <i className="fas fa-users"></i>
         </div>
       </div>
@@ -304,85 +298,106 @@ const FAQSection = () => {
     </div>
   </div>
 </div>
-{/* WhyChooseUs */}
 <div className="py-16 px-6 bg-gray-50 text-center">
-      {/* Heading */}
-      <h1 className="text-4xl font-extrabold text-gray-800">
-        Why Choose <span className="text-orange-500">Vahtook?</span>
-      </h1>
-      <p className="text-gray-600 mt-3 text-lg">
-        We're committed to providing the <span className="font-semibold">best logistics experience</span>
-      </p>
+  {/* Heading */}
+  <h1 className="text-4xl font-extrabold text-gray-800">
+    Why Choose <span className="text-[#ff9d00]">Vaht<span>∞</span>k?</span>
+  </h1>
+  <p className="text-gray-600 mt-3 text-lg">
+    We're committed to providing the{" "}
+    <span className="font-semibold">best logistics experience</span>
+  </p>
 
-      {/* Grid */}
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {/* Item 1 */}
-        <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
-          <div className="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-xl text-orange-500 text-2xl">
-            <i className="fas fa-shield-alt"></i>
-          </div>
-          <div className="text-left">
-            <h3 className="font-bold text-gray-800 text-lg">Safe & Secure</h3>
-            <p className="text-gray-500 text-sm">Your items are insured and handled with utmost care</p>
-          </div>
-        </div>
+  {/* Grid */}
+  <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    {/* Item 1 */}
+    <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+      <div className="w-14 h-14 flex items-center justify-center bg-gray-200 rounded-xl text-[#ff9d00] text-2xl">
 
-        {/* Item 2 */}
-        <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
-          <div className="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-xl text-orange-500 text-2xl">
-            <i className="fas fa-clock"></i>
-          </div>
-          <div className="text-left">
-            <h3 className="font-bold text-gray-800 text-lg">Fast Delivery</h3>
-            <p className="text-gray-500 text-sm">Quick and efficient delivery solutions for urgent needs</p>
-          </div>
-        </div>
 
-        {/* Item 3 */}
-        <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
-          <div className="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-xl text-orange-500 text-2xl">
-            <i className="fas fa-dollar-sign"></i>
-          </div>
-          <div className="text-left">
-            <h3 className="font-bold text-gray-800 text-lg">Best Prices</h3>
-            <p className="text-gray-500 text-sm">Competitive pricing with transparent cost structure</p>
-          </div>
-        </div>
-
-        {/* Item 4 */}
-        <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
-          <div className="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-xl text-orange-500 text-2xl">
-            <i className="fas fa-star"></i>
-          </div>
-          <div className="text-left">
-            <h3 className="font-bold text-gray-800 text-lg">Top Rated</h3>
-            <p className="text-gray-500 text-sm">Highly rated by thousands of satisfied customers</p>
-          </div>
-        </div>
-
-        {/* Item 5 */}
-        <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
-          <div className="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-xl text-orange-500 text-2xl">
-            <i className="fas fa-truck"></i>
-          </div>
-          <div className="text-left">
-            <h3 className="font-bold text-gray-800 text-lg">Reliable Fleet</h3>
-            <p className="text-gray-500 text-sm">Well-maintained vehicles and professional drivers</p>
-          </div>
-        </div>
-
-        {/* Item 6 */}
-        <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
-          <div className="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-xl text-orange-500 text-2xl">
-            <i className="fas fa-phone-alt"></i>
-          </div>
-          <div className="text-left">
-            <h3 className="font-bold text-gray-800 text-lg">24/7 Support</h3>
-            <p className="text-gray-500 text-sm">Round-the-clock customer support for all your queries</p>
-          </div>
-        </div>
+         <i className="fas fa-shield-alt"></i> 
+      </div>
+      <div className="text-left">
+        <h3 className="font-bold text-gray-800 text-lg">Safe & Secure</h3>
+        <p className="text-gray-500 text-sm">
+          Your items are insured and handled with utmost care
+        </p>
       </div>
     </div>
+
+    {/* Item 2 */}
+    <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+      <div className="w-14 h-14 flex items-center justify-center bg-gray-200 rounded-xl text-[#ff9d00] text-2xl">
+         <i className="fas fa-clock"></i> 
+      </div>
+      <div className="text-left">
+        <h3 className="font-bold text-gray-800 text-lg">Fast Delivery</h3>
+        <p className="text-gray-500 text-sm">
+          Quick and efficient delivery solutions for urgent needs
+        </p>
+      </div>
+    </div>
+
+   {/* Item 3 */}
+<div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+  <div className="w-14 h-14 flex items-center justify-center bg-gray-200 rounded-xl text-[#ff9d00] text-2xl">
+
+    <IndianRupee size={28} /> {/* Changed from Dollar to Rupee */}
+  </div>
+  <div className="text-left">
+    <h3 className="font-bold text-gray-800 text-lg">Best Prices</h3>
+    <p className="text-gray-500 text-sm">
+      Competitive pricing with transparent cost structure
+    </p>
+  </div>
+</div>
+
+
+    {/* Item 4 */}
+    <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+      <div className="w-14 h-14 flex items-center justify-center bg-gray-200 rounded-xl text-[#ff9d00] text-2xl">
+
+
+         <i className="fas fa-star"></i> 
+      </div>
+      <div className="text-left">
+        <h3 className="font-bold text-gray-800 text-lg">Top Rated</h3>
+        <p className="text-gray-500 text-sm">
+          Highly rated by thousands of satisfied customers
+        </p>
+      </div>
+    </div>
+
+    {/* Item 5 */}
+    <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+      <div className="w-14 h-14 flex items-center justify-center bg-gray-200 rounded-xl text-[#ff9d00] text-2xl">
+
+         <i className="fas fa-truck"></i> 
+      </div>
+      <div className="text-left">
+        <h3 className="font-bold text-gray-800 text-lg">Reliable Fleet</h3>
+        <p className="text-gray-500 text-sm">
+          Well-maintained vehicles and professional drivers
+        </p>
+      </div>
+    </div>
+
+    {/* Item 6 */}
+    <div className="flex items-start gap-4 border rounded-2xl p-6 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+      <div className="w-14 h-14 flex items-center justify-center bg-gray-200 rounded-xl text-[#ff9d00] text-2xl">
+
+        <Phone size={28} />{/* <i className="fas fa-phone-alt"></i> */}
+      </div>
+      <div className="text-left">
+        <h3 className="font-bold text-gray-800 text-lg">24/7 Support</h3>
+        <p className="text-gray-500 text-sm">
+          Round-the-clock customer support for all your queries
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
     {/* //////////////////////////////////////////////////////////////////// */}
