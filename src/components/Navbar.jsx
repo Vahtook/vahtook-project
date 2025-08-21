@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import vahtookLogo from "../assets/vahtook-logo.png";
 
 const Navbar = () => {
   return (
@@ -9,22 +10,23 @@ const Navbar = () => {
           
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1
-              className="text-2xl font-bold tracking-wide"
-              style={{ color: "#ff9d00" }}
-            >
-              Vaht∞k
-            </h1>
+            <Link to="/">
+              <img
+                src={vahtookLogo}
+                alt="Vahtook Logo"
+                className="h-10 w-auto cursor-pointer hover:opacity-80 transition-opacity duration-300"
+              />
+            </Link>
           </div>
 
           {/* Links on right */}
           <ul className="flex space-x-6 ml-auto">
             <li>
               <Link
-                to="/"
+                to="/business-partner"
                 className="hover:text-yellow-400 transition-colors duration-300"
               >
-                Home
+                Business Partner
               </Link>
             </li>
             <li>

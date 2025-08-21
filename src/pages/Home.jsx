@@ -154,7 +154,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Book Now Button */}
-                <button className="w-full bg-brand-orange hover:bg-orange-600 text-white py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 mt-2">
+                <button className="w-full bg-[#EB9900] hover:bg-[#d68600] text-white py-3 rounded-lg font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 mt-2">
                   Book Now
                 </button>
               </div>
@@ -231,18 +231,18 @@ const FAQSection = () => {
                 <div className="flex items-center space-x-3 w-full">
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all duration-200 flex-shrink-0 ${
                     openItems[index] 
-                      ? 'bg-brand-orange text-white' 
-                      : 'bg-orange-100 text-brand-orange group-hover:bg-orange-200'
+                      ? 'bg-[#EB9900] text-white' 
+                      : 'bg-orange-100 text-[#EB9900] group-hover:bg-orange-200'
                   }`}>
                     <svg 
-                      className={`w-3 h-3 transition-transform duration-200 ${
-                        openItems[index] ? 'rotate-45' : 'rotate-0'
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        openItems[index] ? 'rotate-180' : 'rotate-0'
                       }`} 
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
                   <h3 className="text-base font-medium text-gray-900 group-hover:text-brand-orange transition-colors duration-200">
@@ -257,10 +257,10 @@ const FAQSection = () => {
                   ? 'max-h-96 opacity-100' 
                   : 'max-h-0 opacity-0'
               } overflow-hidden`}>
-                <div className="px-5 pb-5 pt-2">
-                  <div className="ml-9 mr-2">
-                    <div className="bg-gray-50 rounded-lg p-4 border-l-4 border-brand-orange">
-                      <p className="text-gray-700 leading-7 text-base">
+                <div className="px-5 pb-4">
+                  <div className="ml-9">
+                    <div className="pl-4 py-2">
+                      <p className="text-gray-600 leading-6 text-sm">
                         {item.answer}
                       </p>
                     </div>
