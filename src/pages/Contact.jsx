@@ -27,7 +27,7 @@ export default function ContactUs() {
           Contact <span className="text-[#ff9d00]">Vaht∞k</span>
         </h2>
         <p className="text-gray-700 text-center mt-2">
-          We'd love to hear from you! Fill out the form or reach us directly through our social links @onkar.
+          We'd love to hear from you! Fill out the form or reach us directly through our social links.
         </p>
 
         {/* Contact Form */}
@@ -48,7 +48,7 @@ export default function ContactUs() {
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">Your Email @onkar</label>
+            <label className="block text-sm font-medium text-gray-700">Your Email</label>
             <input
               type="email"
               name="email"
