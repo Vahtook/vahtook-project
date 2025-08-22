@@ -48,7 +48,7 @@ export default function ContactUs() {
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">Your Email</label>
+            <label className="block text-sm font-medium text-gray-700">Add Your Email</label>
             <input
               type="email"
               name="email"
