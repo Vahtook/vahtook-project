@@ -22,7 +22,7 @@ const HeroSection = () => {
 
             {/* Description */}
             <div className="space-y-6">
-              <p className="text-lg lg:text-2xl text-black leading-relaxed max-w-xl font-medium">
+              <p className="text-lg lg:text-xl text-black leading-relaxed max-w-xl font-medium">
                 Professional logistics and delivery services at your fingertips.
                 Fast, reliable, and affordable vehicle booking for all your
                 transportation needs.
@@ -31,16 +31,16 @@ const HeroSection = () => {
               {/* Key Features */}
               <div className="flex flex-wrap gap-4 lg:gap-6">
                 <div className="flex items-center space-x-2">
-                  <div className="w-2.5 h-2.5 bg-black rounded-full"></div>
-                  <span className="text-base lg:text-lg text-black font-medium">24/7 Available</span>
+                  <div className="w-2 h-2 bg-black rounded-full"></div>
+                  <span className="text-sm lg:text-base text-black font-medium">24/7 Available</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-2.5 h-2.5 bg-black rounded-full"></div>
-                  <span className="text-base lg:text-lg text-black font-medium">Real-time Tracking</span>
+                  <div className="w-2 h-2 bg-black rounded-full"></div>
+                  <span className="text-sm lg:text-base text-black font-medium">Real-time Tracking</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-2.5 h-2.5 bg-black rounded-full"></div>
-                  <span className="text-base lg:text-lg text-black font-medium">Instant Booking</span>
+                  <div className="w-2 h-2 bg-black rounded-full"></div>
+                  <span className="text-sm lg:text-base text-black font-medium">Instant Booking</span>
                 </div>
               </div>
             </div>
@@ -213,11 +213,11 @@ const FAQSection = () => {
     {/* Card 1 */}
     <div className="border rounded-2xl p-6 max-w-xs mx-auto shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-2 bg-white">
       <div className="flex justify-center">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 rounded-xl text-[#ff9d00] text-xl shadow-inner">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 rounded-xl text-[#ff9d00]n` text-xl shadow-inner">
           <i className="fas fa-building"></i>
         </div>
       </div>
-      <h3 className="mt-4 text-2xl font-bold text-gray-800">
+      <h3 className="mt-4 text-lg font-semibold text-gray-800">
         Vahtook for Brands
       </h3>
       <p className="text-gray-500 mt-2 text-sm leading-relaxed">
@@ -242,11 +242,11 @@ const FAQSection = () => {
     {/* Card 2 */}
     <div className="border rounded-2xl p-6 max-w-xs mx-auto shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-2 bg-white">
       <div className="flex justify-center">
-        <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gray-200 rounded-xl text-[#ff9d00] text-xl shadow-inner">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 rounded-xl text-[#ff9d00]n` text-xl shadow-inner">
           <i className="fas fa-user"></i>
         </div>
       </div>
-      <h3 className="mt-4 text-2xl font-bold text-gray-800">
+      <h3 className="mt-4 text-lg font-semibold text-gray-800">
         Vahtook for Individuals
       </h3>
       <p className="text-gray-500 mt-2 text-sm leading-relaxed">
@@ -271,11 +271,11 @@ const FAQSection = () => {
     {/* Card 3 */}
     <div className="border rounded-2xl p-6 max-w-xs mx-auto shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-2 bg-white">
       <div className="flex justify-center">
-        <div className="w-12 h-12 flex items-center justify-center  bg-gray-200 rounded-xl text-[#ff9d00] text-xl shadow-inner">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 rounded-xl text-[#ff9d00]n` text-xl shadow-inner">
           <i className="fas fa-users"></i>
         </div>
       </div>
-      <h3 className="mt-4 text-2xl font-bold text-gray-800">
+      <h3 className="mt-4 text-lg font-semibold text-gray-800">
         Vahtook for SMEs
       </h3>
       <p className="text-gray-500 mt-2 text-sm leading-relaxed">
