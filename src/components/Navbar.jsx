@@ -21,8 +21,8 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Links */}
-          <ul className="hidden md:flex space-x-6 ml-auto">
+          {/* Center Links */}
+          <ul className="hidden md:flex space-x-8 text-lg font-medium absolute left-1/2 transform -translate-x-1/2">
             <li>
               <Link
                 to="/business-partner"
@@ -39,6 +39,10 @@ const Navbar = () => {
                 Driver Partner
               </Link>
             </li>
+          </ul>
+
+          {/* Right-aligned Support Link */}
+          <ul className="hidden md:flex text-lg font-medium">
             <li>
               <Link
                 to="/support"
@@ -60,7 +64,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#001833] px-4 pb-4 space-y-3">
+        <div className="md:hidden bg-[#001833] px-4 pb-4 space-y-3 text-lg font-medium">
           <Link
             to="/business-partner"
             onClick={() => setIsOpen(false)}
