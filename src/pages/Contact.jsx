@@ -27,7 +27,7 @@ export default function ContactUs() {
           Contact <span className="text-[#ff9d00]">Vaht∞k</span>
         </h2>
         <p className="text-gray-700 text-center mt-2">
-          We'd love to hear from you! Fill out the form or reach us directly through our social links.
+          We'd love to hear from you! Fill out the form or reach us directly through our social links @onkar.
         </p>
 
         {/* Contact Form */}
