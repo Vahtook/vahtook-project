@@ -2,16 +2,19 @@
   "name": "vahtook-project",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://www.vahtook.com/",
+  "homepage": "https://Vahtook.github.io/",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "react-scripts build",
     "postbuild": "shx cp dist/index.html dist/404.html",
     "preview": "vite preview --port 5173",
     "predeploy": "npm run build",
     "lint": "eslint .",
-    "deploy": "gh-pages -d dist -b gh-pages -m \"deploy: $(date -u +'%Y-%m-%dT%H:%M:%SZ')\""
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
@@ -19,7 +22,8 @@
     "lucide-react": "^0.540.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router-dom": "^7.8.1"
+    "react-router-dom": "^7.8.1",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
