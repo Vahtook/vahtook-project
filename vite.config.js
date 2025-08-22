@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/',
+  base: '/vahtook-project',
   build: {
     outDir: 'dist',  // ensures output folder is 'dist'
   },
