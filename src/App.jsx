@@ -2,6 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Career from "./pages/Career";
 import Home from "./pages/Home";
 import DriverPartnerForm from "./pages/DriverPartner";
 import Contact from "./pages/Contact";
@@ -19,7 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/driver-partner" element={<DriverPartnerForm />} />
         <Route path="/support" element={<Contact />} />
-        
+        <Route path="/career" element={<Career />} />
         <Route path="/business-partner" element={<BusinessPartner />} /> 
         {/* Temporary — replace with actual page later */}
       </Routes>

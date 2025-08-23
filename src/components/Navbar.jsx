@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react"; 
-import vahtookLogo from "../assets/new-logo.png";
+import vahtookLogo from "../assets/new_img.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
