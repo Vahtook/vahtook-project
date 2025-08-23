@@ -7,8 +7,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
         {/* Brand */}
         <div>
-          <h2 className="text-2xl font-bold text-white">
-            Vaht<span className="text-[#ff9d00]">∞</span>k
+          <h2 className="text-2xl font-bold text-[#ff9d00]">
+            Vahtook
           </h2>
           <p className="mt-3 text-sm text-slate-400 leading-relaxed">
             Smart logistics solutions for businesses and individuals.

@@ -24,7 +24,7 @@ export default function ContactUs() {
     <section className="min-h-screen bg-gradient-to-br from-[#fff7ed] to-[#fefce8] py-12 px-6">
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
         <h2 className="text-3xl font-bold text-center mb-2">
-          Contact <span className="text-[#ff9d00]">Vaht∞k</span>
+          Contact <span className="text-[#ff9d00]">Vahtook</span>
         </h2>
         <p className="text-gray-700 text-center mt-2">
           We'd love to hear from you! Fill out the form or reach us directly through our social links.
@@ -48,7 +48,7 @@ export default function ContactUs() {
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">Your Email @onkar</label>
+            <label className="block text-sm font-medium text-gray-700">Your Email</label>
             <input
               type="email"
               name="email"

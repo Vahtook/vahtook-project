@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // hamburger & close icons
+import { Menu, X } from "lucide-react"; 
 import vahtookLogo from "../assets/new-logo.png";
 
 const Navbar = () => {

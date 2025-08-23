@@ -301,7 +301,7 @@ const FAQSection = () => {
 <div className="py-16 px-6 bg-gray-50 text-center">
   {/* Heading */}
   <h1 className="text-4xl font-extrabold text-gray-800">
-    Why Choose <span className="text-[#ff9d00]">Vaht<span>∞</span>k?</span>
+    Why Choose <span className="text-[#ff9d00]">Vahtook?</span>
   </h1>
   <p className="text-gray-600 mt-3 text-lg">
     We're committed to providing the{" "}

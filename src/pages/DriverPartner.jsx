@@ -90,11 +90,11 @@ export default function DriverPartnerForm() {
     <div className="min-h-screen bg-gradient-to-br from-[#fff7ed] to-[#fefce8] flex items-center justify-center py-12 px-6" style={{ backgroundImage: `url(${bgImage})` }}>
       <div className="w-full max-w-3xl bg-white shadow-xl rounded-2xl p-8">
         <h1 className="text-3xl font-bold text-center mb-2">
-           <span className="text-[#ff9d00]">Vaht∞k</span>{" "}
+           <span className="text-[#ff9d00]">Vahtook</span>{" "}
            <span className="text-black">Driver Partner Registration</span>
          </h1>
         <p className="text-center text-slate-700 mb-6">
-          Join Vaht∞k and grow your logistics business with us!
+          Join Vahtook and grow your logistics business with us!
         </p>
 
         {submitted ? (
@@ -305,7 +305,7 @@ export default function DriverPartnerForm() {
                 className="h-4 w-4 rounded border-slate-300 text-[#ff9d00] focus:ring-[#ff9d00]"
               />
               <label htmlFor="agree" className="text-sm text-slate-700">
-                I agree to the Terms & Conditions set out by Vaht∞k
+                I agree to the Terms & Conditions set out by Vahtook
               </label>
             </div>
             {errors.agree && (
