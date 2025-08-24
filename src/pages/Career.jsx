@@ -25,12 +25,19 @@ export default function Career() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-6">
-      <div className="bg-white shadow-xl rounded-2xl p-8 max-w-lg w-full border-t-4" style={{ borderColor: "#ff9d00" }}>
-        <h1 className="text-2xl font-bold text-center mb-6" style={{ color: "#ff9d00" }}>
+      <div
+        className="bg-white shadow-xl rounded-2xl p-8 max-w-lg w-full border-t-4"
+        style={{ borderColor: "#ff9d00" }}
+      >
+        <h1
+          className="text-2xl font-bold text-center mb-6"
+          style={{ color: "#ff9d00" }}
+        >
           Careers at Vahtook
         </h1>
         <p className="text-gray-600 text-center mb-6">
-          Join our logistics revolution! Please provide your details below and upload your resume.
+          Join our logistics revolution! Please provide your details below and
+          upload your resume.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -43,7 +50,7 @@ export default function Career() {
               onChange={handleChange}
               required
               className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2"
-              style={{ borderColor: "#ff9d00", focusRingColor: "#ff9d00" }}
+              style={{ borderColor: "#ff9d00" }}
             />
           </div>
 
@@ -73,29 +80,52 @@ export default function Career() {
             />
           </div>
 
-          {/* Qualification */}
+          {/* Qualification Dropdown */}
           <div>
             <label className="block text-gray-700 text-sm mb-2">Qualification</label>
-            <input
-              type="text"
+            <select
               name="qualification"
               onChange={handleChange}
               required
-              className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2"
+              className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 bg-white"
               style={{ borderColor: "#ff9d00" }}
-            />
+            >
+              <option value="">Select Qualification</option>
+              <option value="B.Tech/BE">B.Tech / BE</option>
+              <option value="M.Tech/ME">M.Tech / ME</option>
+              <option value="BCA">BCA</option>
+              <option value="MCA">MCA</option>
+              <option value="BBA">BBA</option>
+              <option value="MBA">MBA</option>
+              <option value="B.Com">B.Com</option>
+              <option value="M.Com">M.Com</option>
+              <option value="BA">BA</option>
+              <option value="MA">MA</option>
+              <option value="PhD">PhD</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
 
           {/* Resume Upload */}
           <div>
-            <label className="block text-gray-700 text-sm mb-2">Upload Resume (PDF)</label>
+            <label
+              htmlFor="resume"
+              className="block text-gray-700 text-sm mb-2"
+            >
+              Upload Resume (PDF)
+            </label>
             <input
+              id="resume"
               type="file"
               name="resume"
               accept=".pdf"
               onChange={handleChange}
               required
-              className="w-full text-gray-600"
+              className="w-full text-gray-600 file:mr-4 file:py-2 file:px-4 
+                         file:rounded-lg file:border-0 
+                         file:text-sm file:font-semibold 
+                         file:bg-[#ff9d00] file:text-white 
+                         hover:file:bg-[#e68a00]"
             />
           </div>
 

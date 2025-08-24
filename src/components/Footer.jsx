@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Twitter } from "lucide-react";
+import { Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
 
 import { Link } from "react-router-dom";
@@ -123,7 +123,14 @@ export default function Footer() {
              <Twitter size={20} /> 
           </a> }
        
-
+          { <a
+            href="https://youtube.com/@vahtook?si=L9o9cWq4sUJUr4Ll"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-[#ff9d00] transition"
+          >
+             <Youtube size={20} /> 
+          </a> }  
           {/* { <a
             href="https://x.com/vahtook"
             target="_blank"
