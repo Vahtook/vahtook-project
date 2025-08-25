@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Upload } from "lucide-react";
+import businessPartnerImage from "../assets/business-page-1.jpg";
 
 export default function BusinessPartner() {
   const [form, setForm] = useState({
@@ -38,29 +39,34 @@ export default function BusinessPartner() {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-[#38e4d2] to-[#fb9108] py-12 px-6">
-      <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
-        <h1 className="text-3xl font-bold text-center mb-2">
-          Connect with <span className="text-[#ff9d00]">Vaht∞k</span> for Business
+    <section 
+      className="min-h-screen py-6 px-4 relative flex items-center justify-start" 
+      style={{ 
+        backgroundImage: `url("${businessPartnerImage}")`, 
+        backgroundSize: 'cover',
+        backgroundPosition: 'right center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#f0f0f0'
+      }}
+    >
+      <div className="max-w-sm bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/40 ml-16">
+        <h1 className="text-xl font-bold text-center mb-1">
+          Connect with <span className="text-[#ff9d00]">Vahtook</span> for Business
         </h1>
-        {/* <h1 className="text-3xl font-bold text-center mb-2">
-           <span className="text-[#ff9d00]">Vaht∞k</span>{" "}
-           <span className="text-black">Driver Partner Registration</span>
-         </h1> */}
-        <p className="text-gray-700 text-center mt-2">
+        <p className="text-gray-600 text-center text-xs mb-3">
           Partner with us for reliable logistics tailored to your company needs.
         </p>
 
-        <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-3">
           {/* Business Name */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">Business Name</label>
+            <label className="block text-xs font-semibold text-gray-700 mb-1">Business Name</label>
             <input
               type="text"
               name="businessName"
               value={form.businessName}
               onChange={handleChange}
-              className="w-full mt-1 rounded-lg border border-gray-300 p-2 focus:ring-[#ff9d00] focus:border-[#ff9d00]"
+              className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-xs focus:ring-2 focus:ring-[#ff9d00]/20 focus:border-[#ff9d00] outline-none transition-all"
               placeholder="Enter your business name"
               required
             />
@@ -68,13 +74,13 @@ export default function BusinessPartner() {
 
           {/* Business Type */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">Business Type</label>
+            <label className="block text-xs font-semibold text-gray-700 mb-1">Business Type</label>
             <input
               type="text"
               name="businessType"
               value={form.businessType}
               onChange={handleChange}
-              className="w-full mt-1 rounded-lg border border-gray-300 p-2 focus:ring-[#ff9d00] focus:border-[#ff9d00]"
+              className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-xs focus:ring-2 focus:ring-[#ff9d00]/20 focus:border-[#ff9d00] outline-none transition-all"
               placeholder="e.g., Manufacturing, Retail, E-commerce"
               required
             />
@@ -82,12 +88,12 @@ export default function BusinessPartner() {
 
           {/* Vehicle Type */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">Type of Vehicle Required</label>
+            <label className="block text-xs font-semibold text-gray-700 mb-1">Type of Vehicle Required</label>
             <select
               name="vehicleType"
               value={form.vehicleType}
               onChange={handleChange}
-              className="w-full mt-1 rounded-lg border border-gray-300 p-2 focus:ring-[#ff9d00] focus:border-[#ff9d00]"
+              className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-xs focus:ring-2 focus:ring-[#ff9d00]/20 focus:border-[#ff9d00] outline-none transition-all"
               required
             >
               <option value="">Select vehicle type</option>
@@ -102,13 +108,13 @@ export default function BusinessPartner() {
 
           {/* Trips Per Day */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">Number of Trips per Day</label>
+            <label className="block text-xs font-semibold text-gray-700 mb-1">Number of Trips per Day</label>
             <input
               type="number"
               name="tripsPerDay"
               value={form.tripsPerDay}
               onChange={handleChange}
-              className="w-full mt-1 rounded-lg border border-gray-300 p-2 focus:ring-[#ff9d00] focus:border-[#ff9d00]"
+              className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-xs focus:ring-2 focus:ring-[#ff9d00]/20 focus:border-[#ff9d00] outline-none transition-all"
               placeholder="e.g., 5"
               required
             />
@@ -116,13 +122,13 @@ export default function BusinessPartner() {
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">Business Email</label>
+            <label className="block text-xs font-semibold text-gray-700 mb-1">Business Email</label>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              className="w-full mt-1 rounded-lg border border-gray-300 p-2 focus:ring-[#ff9d00] focus:border-[#ff9d00]"
+              className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-xs focus:ring-2 focus:ring-[#ff9d00]/20 focus:border-[#ff9d00] outline-none transition-all"
               placeholder="Enter business email"
               required
             />
@@ -130,13 +136,13 @@ export default function BusinessPartner() {
 
           {/* Contact */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">Contact Number</label>
+            <label className="block text-xs font-semibold text-gray-700 mb-1">Contact Number</label>
             <input
               type="tel"
               name="contact"
               value={form.contact}
               onChange={handleChange}
-              className="w-full mt-1 rounded-lg border border-gray-300 p-2 focus:ring-[#ff9d00] focus:border-[#ff9d00]"
+              className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-xs focus:ring-2 focus:ring-[#ff9d00]/20 focus:border-[#ff9d00] outline-none transition-all"
               placeholder="10-digit phone number"
               required
             />
@@ -144,46 +150,46 @@ export default function BusinessPartner() {
 
           {/* Location */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">Location</label>
+            <label className="block text-xs font-semibold text-gray-700 mb-1">Location</label>
             <input
               type="text"
               name="location"
               value={form.location}
               onChange={handleChange}
-              className="w-full mt-1 rounded-lg border border-gray-300 p-2 focus:ring-[#ff9d00] focus:border-[#ff9d00]"
+              className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-xs focus:ring-2 focus:ring-[#ff9d00]/20 focus:border-[#ff9d00] outline-none transition-all"
               placeholder="Enter business location"
               required
             />
           </div>
           {/* Logistic Requirements */}
 <div>
-  <label className="block text-sm font-medium text-gray-700 mb-1">
+  <label className="block text-xs font-semibold text-gray-700 mb-1">
     Logistic Requirements
   </label>
   <textarea
     name="requirements"
     value={form.requirements}
     onChange={handleChange}
-    rows={4}
-    placeholder="Describe your logistic needs (e.g., daily delivery routes, specific vehicle capacity, timelines)..."
-    className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-[#ff9d00] focus:ring focus:ring-[#ff9d00]/30"
+    rows={2}
+    placeholder="Describe your logistic needs..."
+    className="w-full rounded-lg border border-gray-300 px-2 py-1.5 text-xs focus:ring-2 focus:ring-[#ff9d00]/20 focus:border-[#ff9d00] outline-none transition-all resize-none"
   ></textarea>
 </div>
 
 
           {/* Upload Document */}
 <div>
-  <label className="block text-sm font-medium text-gray-700 mb-1">
+  <label className="block text-xs font-semibold text-gray-700 mb-1">
     Upload Documents (optional)
   </label>
   <input
     type="file"
     name="document"
     onChange={handleChange}
-    className="block w-full text-sm text-gray-700
-               file:mr-4 file:py-2 file:px-4
+    className="block w-full text-xs text-gray-700
+               file:mr-2 file:py-1 file:px-2
                file:rounded-md file:border-0
-               file:text-sm file:font-semibold
+               file:text-xs file:font-semibold
                file:bg-[#ff9d00] file:text-white
                hover:file:bg-[#e68a00]"
   />
@@ -191,10 +197,10 @@ export default function BusinessPartner() {
 
 
           {/* Submit */}
-          <div className="text-center">
+          <div className="text-center pt-1">
             <button
               type="submit"
-              className="px-6 py-2 rounded-lg bg-[#ff9d00] text-white font-semibold shadow-md hover:bg-[#e68a00] transition"
+              className="w-full bg-gradient-to-r from-[#ff9d00] to-[#ffb84d] hover:from-[#e68a00] hover:to-[#ff9d00] text-white py-2 rounded-lg font-semibold text-xs transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
               Submit Request
             </button>
