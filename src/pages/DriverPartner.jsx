@@ -117,7 +117,7 @@ export default function DriverPartnerForm() {
           {/* Header */}
           <div className="text-center mb-6 relative z-10">
             <h1 className="text-3xl font-bold mb-1 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-              Join <span className="text-[#ff9d00]">Vaht∞k</span>
+              Join <span className="text-[#ff9d00]">Vahtook</span>
             </h1>
             <p className="text-gray-600 font-medium">
               Become a trusted logistics partner
