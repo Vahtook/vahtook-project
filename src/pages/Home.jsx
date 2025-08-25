@@ -203,7 +203,7 @@ const FAQSection = () => {
     
       {/*services */}
    <div className="py-16 px-6 bg-white text-center">
-   <h1 className="text-4xl font-bold text-gray-800">Our Services</h1>
+   <h1 className="text-4xl font-bold text-gray-800">Our Services</h1>    
    <p className="text-gray-500 mt-2 text-lg">
     Choose the service that fits your needs
   </p>
@@ -212,7 +212,7 @@ const FAQSection = () => {
     {/* Card 1 */}
     <div className="border rounded-2xl p-6 max-w-xs mx-auto shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-2 bg-white">
       <div className="flex justify-center">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 rounded-xl text-[#ff9d00]n` text-xl shadow-inner">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 rounded-xl text-orange-400 text-xl shadow-inner">
           <i className="fas fa-building"></i>
         </div>
       </div>
@@ -222,7 +222,7 @@ const FAQSection = () => {
       <p className="text-gray-500 mt-2 text-sm leading-relaxed">
         Enterprise logistics solutions for businesses of all sizes
       </p>
-      <ul className="mt-5 flex flex-col items-center gap-2 text-gray-700 font-medium">
+      <ul className="mt-5 flex flex-col  gap-2 text-gray-700 font-medium">
         <li className="flex items-center gap-2 whitespace-nowrap">
           <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
           Bulk shipments
@@ -241,7 +241,7 @@ const FAQSection = () => {
     {/* Card 2 */}
     <div className="border rounded-2xl p-6 max-w-xs mx-auto shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-2 bg-white">
       <div className="flex justify-center">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 rounded-xl text-[#ff9d00]n` text-xl shadow-inner">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 rounded-xl text-orange-400 text-xl shadow-inner">
           <i className="fas fa-user"></i>
         </div>
       </div>
@@ -251,14 +251,14 @@ const FAQSection = () => {
       <p className="text-gray-500 mt-2 text-sm leading-relaxed">
         Personal delivery and moving services for your everyday needs
       </p>
-      <ul className="mt-5 flex flex-col items-center gap-2 text-gray-700 font-medium">
+      <ul className="mt-5 flex flex-col  gap-2 text-gray-700 font-medium">
         <li className="flex items-center gap-2 whitespace-nowrap">
           <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
           Home delivery
         </li>
         <li className="flex items-center gap-2 whitespace-nowrap">
           <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-          Personal moves
+          Personal items
         </li>
         <li className="flex items-center gap-2 whitespace-nowrap">
           <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
@@ -270,7 +270,7 @@ const FAQSection = () => {
     {/* Card 3 */}
     <div className="border rounded-2xl p-6 max-w-xs mx-auto shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-2 bg-white">
       <div className="flex justify-center">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 rounded-xl text-[#ff9d00]n` text-xl shadow-inner">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-200 rounded-xl text-orange-400 text-xl shadow-inner">
           <i className="fas fa-users"></i>
         </div>
       </div>
@@ -280,7 +280,7 @@ const FAQSection = () => {
       <p className="text-gray-500 mt-2 text-sm leading-relaxed">
         Tailored logistics solutions for small and medium enterprises
       </p>
-      <ul className="mt-5 flex flex-col items-center gap-2 text-gray-700 font-medium">
+      <ul className="mt-5 flex flex-col gap-2 text-gray-700 font-medium">
         <li className="flex items-center gap-2 whitespace-nowrap">
           <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
           Flexible plans

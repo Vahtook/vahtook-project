@@ -379,7 +379,7 @@ export default function DriverPartnerForm() {
                 className="h-5 w-5 rounded-md border-2 border-gray-300 text-[#ff9d00] focus:ring-2 focus:ring-[#ff9d00]/20 focus:border-[#ff9d00] transition-all duration-200 mt-0.5"
               />
               <label htmlFor="agree" className="text-sm text-gray-700 font-medium cursor-pointer">
-                I agree to the <span className="text-[#ff9d00]">Terms & Conditions</span> set out by Vahtook
+                I agree to the <span className="text-[#ff9d00]">Terms & Conditions</span> set out by Vaht∞k
               </label>
             </div>
             {errors.agree && (
@@ -398,7 +398,7 @@ export default function DriverPartnerForm() {
             >
               <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               <span className="relative flex items-center justify-center space-x-2">
-                <span>Join Vahtook Network</span>
+                <span>Join Vaht∞k Network</span>
                 <svg className="h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

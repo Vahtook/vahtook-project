@@ -34,7 +34,7 @@ export default function ContactUs() {
       <div className="relative min-h-screen flex items-center justify-end pr-16 lg:pr-24">
         <div className="relative z-10 max-w-3xl bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-2xl border border-white/30">
         <h2 className="text-2xl font-bold text-center mb-1">
-          Contact <span className="text-[#ff9d00]">Vahtook</span>
+          Contact <span className="text-[#ff9d00]">Vaht∞k</span>
         </h2>
         <p className="text-gray-600 text-center text-sm">
           We'd love to hear from you!
