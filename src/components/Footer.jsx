@@ -112,11 +112,9 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="icon insta"
               >
-                {/* Instagram SVG */}
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
-                  
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
                 >
@@ -141,7 +139,6 @@ export default function Footer() {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-              
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -151,28 +148,25 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* Twitter */}
+            {/* Twitter (X) */}
             <a
-  href="https://x.com/vahtook"   
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <div className="icons X">
-    <p className="iconName">X</p>
-    <div className="icon x">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path d="M18.244 2H21.5l-7.52 8.58L22 22h-7.295l-5.73-7.21L3.77 22H.5l7.977-9.1L2 2h7.295l5.23 6.58L18.244 2zM16.73 20h2.02L7.34 4H5.2l11.53 16z" />
-      </svg>
-    </div>
-  </div>
-</a>
-
-
-
+              href="https://x.com/vahtook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="icons X">
+                <p className="iconName">X</p>
+                <div className="icon x">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M18.244 2H21.5l-7.52 8.58L22 22h-7.295l-5.73-7.21L3.77 22H.5l7.977-9.1L2 2h7.295l5.23 6.58L18.244 2zM16.73 20h2.02L7.34 4H5.2l11.53 16z" />
+                  </svg>
+                </div>
+              </div>
+            </a>
 
             {/* YouTube */}
             <div className="icons youtube">
@@ -185,7 +179,6 @@ export default function Footer() {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -202,20 +195,26 @@ export default function Footer() {
           <span className="text-white font-semibold">Vahtook</span>. All Rights
           Reserved.
         </p>
+
+        {/* ✅ Added Contact Info below copyright */}
+        <div className="mt-4 text-slate-400 text-center text-sm space-y-0">
+          <p> Address: B-10 Kedar Galaxy, Shramik Nagar, Nashik. 422012</p>
+          <p> Email: info@vahtook.com</p>
+          <p> Phone: 7777810196</p>
+        </div>
       </div>
     </footer>
   );
 }
 
 const StyledWrapper = styled.div`
-  
-    #SocailIcons {
-  min-width: 350px;
-  display: flex;
-  justify-content: center;   
-  gap: 20px;                
-  margin-top: 20px;
-}
+  #SocailIcons {
+    min-width: 350px;
+    display: flex;
+    justify-content: center;   
+    gap: 20px;                
+    margin-top: 20px;
+  }
 
   .icons {
     width: 25px;
@@ -265,9 +264,10 @@ const StyledWrapper = styled.div`
   .icons.youtube:hover .iconName {
     background: #ff0000;
   }
+
   .icon.x::before {
-  background: #000;   /* Expands in black */
-}
+    background: #000;
+  }
 
   .icon {
     width: 100%;
@@ -279,7 +279,7 @@ const StyledWrapper = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
-    background: #fff; /* ✅ base background */
+    background: #fff; 
     z-index: 1;
   }
 

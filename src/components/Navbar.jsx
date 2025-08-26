@@ -7,16 +7,20 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#002244] text-white shadow-md">
+    <nav className="fixed top-0 left-0 w-full bg-[#002244] text-white shadow-md z-50">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 ml-14">
             <Link to="/">
               <img
                 src={vahtookLogo}
                 alt="Vahtook Logo"
+<<<<<<< Updated upstream
                 className="w-[90px] h-auto cursor-pointer hover:opacity-80 transition-opacity duration-300"
+=======
+                className="w-[90px] h-[20px] cursor-pointer transition-opacity duration-300"
+>>>>>>> Stashed changes
               />
             </Link>
           </div>
@@ -42,7 +46,7 @@ const Navbar = () => {
           </ul>
 
           {/* Right-aligned Support Link */}
-          <ul className="hidden md:flex text-lg font-medium">
+          <ul className="hidden md:flex text-lg font-medium mr-12">
             <li>
               <Link
                 to="/support"
@@ -54,7 +58,7 @@ const Navbar = () => {
           </ul>
 
           {/* Mobile Hamburger */}
-          <div className="md:hidden">
+          <div className="md:hidden mr-3">
             <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
