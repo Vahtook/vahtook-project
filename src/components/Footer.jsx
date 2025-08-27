@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import logo from "../assets/new-vahtook-logo.jpg";
 
 export default function Footer() {
   return (
@@ -9,7 +10,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
         {/* Brand */}
         <div>
-          <h2 className="text-2xl font-bold text-[#ff9d00]">VAHTOOK</h2>
+          <img 
+             src={logo}
+             alt="Vahtook logo"
+             className="h-19 w-auto mx-auto md:mx-0"
+         />
           <p className="mt-3 text-sm text-slate-400 leading-relaxed">
             Smart logistics solutions for businesses and individuals. Reliable,
             affordable, and built for growth.
@@ -201,6 +206,7 @@ export default function Footer() {
           <p> Address: B-10 Kedar Galaxy, Shramik Nagar, Nashik. 422012</p>
           <p> Email: info@vahtook.com</p>
           <p> Phone: 7777810196</p>
+          
         </div>
       </div>
     </footer>

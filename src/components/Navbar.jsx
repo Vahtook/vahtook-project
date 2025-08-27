@@ -16,11 +16,11 @@ const Navbar = () => {
               <img
                 src={vahtookLogo}
                 alt="Vahtook Logo"
-<<<<<<< Updated upstream
+ 
                 className="w-[90px] h-auto cursor-pointer hover:opacity-80 transition-opacity duration-300"
-=======
-                className="w-[90px] h-[20px] cursor-pointer transition-opacity duration-300"
->>>>>>> Stashed changes
+
+                
+ 
               />
             </Link>
           </div>
