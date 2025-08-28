@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import DriverPartnerForm from "./pages/DriverPartner";
 import Contact from "./pages/Contact";
 import BusinessPartner from "./pages/BuisnessPartner";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 
       {/* Global Footer */}
       <Footer />
+        <WhatsAppButton />
     </>
   );
 }

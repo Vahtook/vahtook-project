@@ -172,26 +172,31 @@ export default function Footer() {
                 </div>
               </div>
             </a>
+           
+           {/* Facebook */}
+<div className="icons facebook">
+  <p className="iconName">Facebook</p>
+  <a
+    href="https://www.facebook.com/people/Vahtook/61579309444613/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="icon face"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.407.593 24 1.324 24H12.82V14.706h-3.12v-3.62h3.12V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.463.099 2.794.143v3.24h-1.918c-1.505 0-1.797.716-1.797 1.767v2.315h3.59l-.467 3.62h-3.123V24h6.127C23.407 24 24 23.407 24 22.676V1.324C24 .593 23.407 0 22.676 0" />
+    </svg>
+  </a>
+</div>
 
-            {/* Facebook */}
-            <a
-              href="https://www.facebook.com/vahtook"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="icons facebook">
-                <p className="iconName">Facebook</p>
-                <div className="icon facebook">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18.244 2H21.5l-7.52 8.58L22 22h-7.295l-5.73-7.21L3.77 22H.5l7.977-9.1L2 2h7.295l5.23 6.58L18.244 2zM16.73 20h2.02L7.34 4H5.2l11.53 16z" />
-                  </svg>
-                </div>
-              </div>
-            </a>
+
+
+  
+
+
 
             {/* YouTube */}
             <div className="icons youtube">
@@ -341,6 +346,14 @@ const StyledWrapper = styled.div`
   }
   .icon.whats::before {
     background: #25d366;
+  }
+  .icons.facebook:hover .iconName {
+    background: #1877f2; /* Official Facebook blue */
+  }
+
+  
+  .icon.face::before {
+    background: #1877f2;
   }
 `;
 
