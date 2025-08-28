@@ -150,12 +150,14 @@ const HeroSection = () => {
           {/* Desktop/Tablet Layout - Two columns */}
           <div className="hidden lg:grid lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
             {/* Left Column - Content */}
-            <div className="flex flex-col justify-start space-y-8 py-12">
+            <div className="flex flex-col justify-start space-y-8 py-0">
               <div className="space-y-4 mt-72 ml-16">
-                <p className="text-base text-white leading-snug max-w-xl font-medium drop-shadow-lg">
+                <span className="text-base text-white leading-snug max-w-xl font-medium drop-shadow-lg">
+
+                                                              
                   Connecting you to trusted drivers across the city.
                   Reliable transport solutions, tailored for you.
-                </p>
+                </span>
               </div>
             </div>
 
@@ -167,15 +169,16 @@ const HeroSection = () => {
 
           {/* Mobile/Tablet Layout - Only content, no form */}
           <div className="lg:hidden flex flex-col justify-center items-center min-h-[40vh] sm:min-h-[50vh]">
-            <div className="text-center space-y-3 sm:space-y-4 mt-32 sm:mt-40">
-              <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-white drop-shadow-lg px-2" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.7)'}}>
-                Heavy or Light <span className="text-[#EB9900] whitespace-nowrap drop-shadow-lg shadow-black/40" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.7)'}}>We Move It Right</span>
-              </h1>
-              <p className="text-[10px] sm:text-[10px] text-white leading-snug max-w-lg font-medium drop-shadow-lg px-4">
-                Connecting you to trusted drivers across the city.
-                Reliable transport solutions, tailored for you.
-              </p>
-            </div>
+            <div className="text-center space-y-3 sm:space-y-4 pt-20 sm:pt-40">
+  <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-white drop-shadow-lg px-2" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.7)'}}>
+    Heavy or Light <span className="text-[#EB9900] whitespace-nowrap drop-shadow-lg shadow-black/40" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.7)'}}>We Move It Right</span>
+  </h1>
+  <p className="text-[10px] sm:text-[10px] text-white leading-snug max-w-lg font-medium drop-shadow-lg px-4">
+    Connecting you to trusted drivers across the city.
+    Reliable transport solutions, tailored for you.
+  </p>
+</div>
+
           </div>
         </div>
       </div>
@@ -236,7 +239,7 @@ const FAQSection = () => {
       {/*services */}
    <div className="py-16 px-6 bg-white text-center">
    <h1 className="text-4xl font-extrabold text-gray-800">
-      Our services </h1>
+      Our Services </h1>
    <p className="text-gray-500 mt-2 text-lg">
     Choose the service that fits your needs
   </p>
