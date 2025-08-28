@@ -12,6 +12,7 @@ body {
 
 /* Responsive hero background styles */
 .hero-background {
+ 
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -22,6 +23,7 @@ body {
 
 /* Driver Partner background styles */
 .driver-partner-background {
+  margin-top:55px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react"; 
-import vahtookLogo from "../assets/new_img.png";
+import vahtookLogo from "../assets/new_logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,15 +11,14 @@ const Navbar = () => {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 ml-14">
+          <div className="flex-shrink-0 ml-4 md:ml-14">
             <Link to="/">
               <img
                 src={vahtookLogo}
                 alt="Vahtook Logo"
  
-                className="w-[90px] h-auto cursor-pointer hover:opacity-80 transition-opacity duration-300"
+                className="w-[90px] h-[17px] cursor-pointer transition-opacity duration-300"
 
-                
  
               />
             </Link>

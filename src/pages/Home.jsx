@@ -98,7 +98,7 @@ const BookingFormCard = () => {
             <select className="w-full pl-8 sm:pl-10 pr-8 sm:pr-9 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 appearance-none bg-white/80 hover:bg-white hover:border-gray-300 text-xs sm:text-sm text-gray-900 shadow-sm">
               <option value="">Choose vehicle type</option>
               <option value="motorcycle">🏍️ Motorcycle</option>
-              <option value="van">🚐 Van</option>
+              
               <option value="truck">🚛 Truck</option>
               <option value="pickup">🛻 Pickup Truck</option>
               <option value="trailer">🚜 Trailer</option>
@@ -235,7 +235,8 @@ const FAQSection = () => {
     
       {/*services */}
    <div className="py-16 px-6 bg-white text-center">
-   <h1 className="text-4xl font-bold text-gray-800">Our Services</h1>
+   <h1 className="text-4xl font-extrabold text-gray-800">
+      Our services </h1>
    <p className="text-gray-500 mt-2 text-lg">
     Choose the service that fits your needs
   </p>

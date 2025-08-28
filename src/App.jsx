@@ -14,17 +14,17 @@ import WhatsAppButton from "./components/WhatsAppButton";
 function App() {
   return (
     <>
-      {/* Global Navbar */}
+     
       <Navbar />
 
-      {/* Route-based Pages */}
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/driver-partner" element={<DriverPartnerForm />} />
         <Route path="/support" element={<Contact />} />
         <Route path="/career" element={<Career />} />
         <Route path="/business-partner" element={<BusinessPartner />} /> 
-        {/* Temporary — replace with actual page later */}
+        
       </Routes>
 
       {/* Global Footer */}

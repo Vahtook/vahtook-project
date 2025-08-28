@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import logo from "../assets/new-vahtook-logo.jpg";
+import logo from "../assets/new_logo.png";
 
 export default function Footer() {
   return (
@@ -9,11 +9,11 @@ export default function Footer() {
       {/* Top Grid */}
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
         {/* Brand */}
-        <div>
+        <div >
           <img 
              src={logo}
              alt="Vahtook logo"
-             className="h-19 w-auto mx-auto md:mx-0"
+             className="h-[16px] w-[90px]"
          />
           <p className="mt-3 text-sm text-slate-400 leading-relaxed">
             Smart logistics solutions for businesses and individuals. Reliable,
@@ -193,11 +193,6 @@ export default function Footer() {
 </div>
 
 
-
-  
-
-
-
             {/* YouTube */}
             <div className="icons youtube">
               <p className="iconName">YouTube</p>
@@ -282,7 +277,6 @@ const StyledWrapper = styled.div`
     transform: scale(1);
   }
 
-  /* Tooltip background colors */
   .icons.instaIcon:hover .iconName {
     background: linear-gradient(30deg, #0000ff, #f56040);
   }
@@ -348,7 +342,7 @@ const StyledWrapper = styled.div`
     background: #25d366;
   }
   .icons.facebook:hover .iconName {
-    background: #1877f2; /* Official Facebook blue */
+    background: #1877f2; 
   }
 
   
