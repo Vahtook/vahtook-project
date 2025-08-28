@@ -3,155 +3,187 @@ import { Shield, Clock, IndianRupee, Star, Truck, Phone } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 import backgroundImage from '../assets/Hero-orange.jpg';
 
+// Separate Booking Form Component
+const BookingFormCard = () => {
+  return (
+    <div className="bg-white rounded-xl p-3 lg:p-5 shadow-2xl border border-white/20 max-w-[280px] sm:max-w-xs w-full lg:max-w-sm relative overflow-hidden mx-auto lg:ml-8">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-[#EB9900]/10 to-transparent rounded-full -translate-y-12 sm:-translate-y-16 translate-x-12 sm:translate-x-16"></div>
+      <div className="absolute bottom-0 left-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-tr from-[#EB9900]/5 to-transparent rounded-full translate-y-8 sm:translate-y-12 -translate-x-8 sm:-translate-x-12"></div>
+      
+      {/* Form Header */}
+      <div className="text-center mb-3 sm:mb-4 relative z-10">
+        <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-1">Quick Booking</h3>
+        <p className="text-xs text-gray-600">Get your ride in minutes</p>
+      </div>
+      <div className="space-y-2 sm:space-y-3 relative z-10">
+        {/* Pickup Location */}
+        <div className="space-y-1 sm:space-y-2">
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-green-400 to-green-500 rounded-full shadow-sm"></div>
+            <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider">From</label>
+          </div>
+          <div className="relative group">
+            <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+              <svg className="h-4 w-4 sm:h-5 sm:w-5 text-green-500 group-focus-within:text-green-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <input
+              type="text"
+              placeholder="Pickup location"
+              className="w-full pl-8 sm:pl-10 pr-3 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 text-xs sm:text-sm text-gray-900 bg-white/80 hover:bg-white hover:border-gray-300 placeholder-gray-400 shadow-sm"
+            />
+          </div>
+        </div>
+
+        {/* Dropoff Location */}
+        <div className="space-y-1 sm:space-y-2">
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-red-400 to-red-500 rounded-full shadow-sm"></div>
+            <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider">To</label>
+          </div>
+          <div className="relative group">
+            <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+              <svg className="h-4 w-4 sm:h-5 sm:w-5 text-red-500 group-focus-within:text-red-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <input
+              type="text"
+              placeholder="Destination"
+              className="w-full pl-8 sm:pl-10 pr-3 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 text-xs sm:text-sm text-gray-900 bg-white/80 hover:bg-white hover:border-gray-300 placeholder-gray-400 shadow-sm"
+            />
+          </div>
+        </div>
+
+        {/* Date and Time */}
+        <div className="space-y-1 sm:space-y-2">
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full shadow-sm"></div>
+            <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider">Schedule</label>
+          </div>
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
+            <div className="relative group">
+              <input
+                type="date"
+                defaultValue={new Date().toISOString().split('T')[0]}
+                className="w-full px-2 sm:px-3 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 text-xs sm:text-sm text-gray-900 bg-white/80 hover:bg-white hover:border-gray-300 shadow-sm"
+              />
+            </div>
+            <div className="relative group">
+              <input
+                type="time"
+                defaultValue={new Date().toTimeString().slice(0,5)}
+                className="w-full px-2 sm:px-3 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 text-xs sm:text-sm text-gray-900 bg-white/80 hover:bg-white hover:border-gray-300 shadow-sm"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Vehicle Type */}
+        <div className="space-y-1 sm:space-y-2">
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-[#ff9d00] to-[#ffb84d] rounded-full shadow-sm"></div>
+            <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider">Vehicle</label>
+          </div>
+          <div className="relative group">
+            <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+              <svg className="h-4 w-4 sm:h-5 sm:w-5 text-[#ff9d00] group-focus-within:text-[#ffb84d] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM21 17a2 2 0 11-4 0 2 2 0 014 0zM7 9l4-4.5L15 9m4 0h1a1 1 0 011 1v6a1 1 0 01-1 1h-1M7 9H6a1 1 0 00-1 1v6a1 1 0 001 1h1m0-8V6a1 1 0 011-1h4a1 1 0 011 1v3M7 9h8" />
+              </svg>
+            </div>
+            <select className="w-full pl-8 sm:pl-10 pr-8 sm:pr-9 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 appearance-none bg-white/80 hover:bg-white hover:border-gray-300 text-xs sm:text-sm text-gray-900 shadow-sm">
+              <option value="">Choose vehicle type</option>
+              <option value="motorcycle">🏍️ Motorcycle</option>
+              <option value="van">🚐 Van</option>
+              <option value="truck">🚛 Truck</option>
+              <option value="pickup">🛻 Pickup Truck</option>
+              <option value="trailer">🚜 Trailer</option>
+            </select>
+            <div className="absolute inset-y-0 right-0 pr-3 sm:pr-4 flex items-center pointer-events-none">
+              <svg className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 group-focus-within:text-[#EB9900] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        {/* Book Now Button */}
+        <button className="w-full bg-gradient-to-r from-[#EB9900] to-[#ff8800] hover:from-[#d68600] hover:to-[#e07700] text-white py-2 sm:py-3 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-[1.02] mt-2 sm:mt-4 relative overflow-hidden group">
+          <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+          <span className="relative flex items-center justify-center space-x-2">
+            <span>Book Your Ride</span>
+            <svg className="h-4 w-4 sm:h-5 sm:w-5 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  );
+};
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden" style={{backgroundImage: `url(${backgroundImage})`}}>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
-        {/* Tagline at the very top */}
-        <div className="text-center pt-8 pb-4">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white drop-shadow-lg" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>
-            Heavy or Light <span className="text-[#EB9900] whitespace-nowrap drop-shadow-lg shadow-black/40" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>We Move It Right</span>
-          </h1>
-        </div>
+    <div className="w-full">
+      {/* Hero Image Section */}
+      <div 
+        className="relative h-[60vh] sm:h-[70vh] lg:min-h-screen hero-background overflow-hidden w-full" 
+        style={{
+          backgroundImage: `url(${backgroundImage})`
+        }}
+      >
+        {/* Mobile-specific background overlay for better readability */}
+        <div className="absolute inset-0 bg-black/20 sm:bg-black/10 md:bg-transparent"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-8 sm:pb-16 z-10">
+          {/* Tagline at the very top - Desktop Only */}
+          <div className="hidden lg:block text-center pt-2 sm:pt-4 lg:pt-2 pb-0 sm:pb-1 lg:pb-2">
+            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white drop-shadow-lg px-2" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.7)'}}>
+              Heavy or Light <span className="text-[#EB9900] whitespace-nowrap drop-shadow-lg shadow-black/40" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.7)'}}>We Move It Right</span>
+            </h1>
+          </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start lg:items-center min-h-[85vh]">
-          {/* Left Column - Content */}
-          <div className="flex flex-col justify-start space-y-6 lg:space-y-8 py-8 lg:py-12">
-            {/* Description */}
-            <div className="space-y-4 mt-48 lg:mt-64 ml-8 lg:ml-16">
-              <p className="text-lg lg:text-xl text-white leading-snug max-w-xl font-medium drop-shadow-lg">
-                Professional logistics and delivery services at your fingertips.
-                Fast, reliable, and affordable vehicle booking for all your
-                transportation needs.
+          {/* Desktop/Tablet Layout - Two columns */}
+          <div className="hidden lg:grid lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
+            {/* Left Column - Content */}
+            <div className="flex flex-col justify-start space-y-8 py-12">
+              <div className="space-y-4 mt-72 ml-16">
+                <p className="text-base text-white leading-snug max-w-xl font-medium drop-shadow-lg">
+                  Connecting you to trusted drivers across the city.
+                  Reliable transport solutions, tailored for you.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column - Booking Form (Desktop Only) */}
+            <div className="relative pl-8 xl:pl-12 flex justify-end -mt-16">
+              <BookingFormCard />
+            </div>
+          </div>
+
+          {/* Mobile/Tablet Layout - Only content, no form */}
+          <div className="lg:hidden flex flex-col justify-center items-center min-h-[40vh] sm:min-h-[50vh]">
+            <div className="text-center space-y-3 sm:space-y-4 mt-32 sm:mt-40">
+              <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-white drop-shadow-lg px-2" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.7)'}}>
+                Heavy or Light <span className="text-[#EB9900] whitespace-nowrap drop-shadow-lg shadow-black/40" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.7)'}}>We Move It Right</span>
+              </h1>
+              <p className="text-[10px] sm:text-[10px] text-white leading-snug max-w-lg font-medium drop-shadow-lg px-4">
+                Connecting you to trusted drivers across the city.
+                Reliable transport solutions, tailored for you.
               </p>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Right Column - Booking Form */}
-          <div className="relative lg:pl-8 xl:pl-12 order-first lg:order-last flex justify-center lg:justify-end -mt-8 lg:-mt-16">
-            {/* Booking Form Card */}
-            <div className="bg-white rounded-2xl p-4 lg:p-5 shadow-2xl border border-white/20 max-w-xs w-full lg:max-w-sm relative overflow-hidden lg:ml-8">
-              {/* Decorative Elements */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#EB9900]/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#EB9900]/5 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
-              
-              {/* Form Header */}
-              <div className="text-center mb-4 relative z-10">
-                <h3 className="text-lg font-bold text-gray-800 mb-1">Quick Booking</h3>
-                <p className="text-xs text-gray-600">Get your ride in minutes</p>
-              </div>
-              <div className="space-y-3 relative z-10">
-                {/* Pickup Location */}
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-green-500 rounded-full shadow-sm"></div>
-                    <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider">From</label>
-                  </div>
-                  <div className="relative group">
-                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                      <svg className="h-5 w-5 text-green-500 group-focus-within:text-green-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <input
-                      type="text"
-                      placeholder="Pickup location"
-                      className="w-full pl-10 pr-3 py-2.5 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 text-sm text-gray-900 bg-white/80 hover:bg-white hover:border-gray-300 placeholder-gray-400 shadow-sm"
-                    />
-                  </div>
-                </div>
-
-                {/* Dropoff Location */}
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-gradient-to-r from-red-400 to-red-500 rounded-full shadow-sm"></div>
-                    <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider">To</label>
-                  </div>
-                  <div className="relative group">
-                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                      <svg className="h-5 w-5 text-red-500 group-focus-within:text-red-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <input
-                      type="text"
-                      placeholder="Destination"
-                      className="w-full pl-10 pr-3 py-2.5 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 text-sm text-gray-900 bg-white/80 hover:bg-white hover:border-gray-300 placeholder-gray-400 shadow-sm"
-                    />
-                  </div>
-                </div>
-
-                {/* Date and Time */}
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full shadow-sm"></div>
-                    <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider">Schedule</label>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    {/* Date Input */}
-                    <div className="relative group">
-                      <input
-                        type="date"
-                        defaultValue={new Date().toISOString().split('T')[0]}
-                        className="w-full px-3 py-2.5 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 text-sm text-gray-900 bg-white/80 hover:bg-white hover:border-gray-300 shadow-sm"
-                      />
-                    </div>
-
-                    {/* Time Input */}
-                    <div className="relative group">
-                      <input
-                        type="time"
-                        defaultValue={new Date().toTimeString().slice(0,5)}
-                        className="w-full px-3 py-2.5 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 text-sm text-gray-900 bg-white/80 hover:bg-white hover:border-gray-300 shadow-sm"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Vehicle Type */}
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-gradient-to-r from-[#ff9d00] to-[#ffb84d] rounded-full shadow-sm"></div>
-                    <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider">Vehicle</label>
-                  </div>
-                  <div className="relative group">
-                    <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                      <svg className="h-5 w-5 text-[#ff9d00] group-focus-within:text-[#ffb84d] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM21 17a2 2 0 11-4 0 2 2 0 014 0zM7 9l4-4.5L15 9m4 0h1a1 1 0 011 1v6a1 1 0 01-1 1h-1M7 9H6a1 1 0 00-1 1v6a1 1 0 001 1h1m0-8V6a1 1 0 011-1h4a1 1 0 011 1v3M7 9h8" />
-                      </svg>
-                    </div>
-                    <select className="w-full pl-10 pr-9 py-2.5 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 appearance-none bg-white/80 hover:bg-white hover:border-gray-300 text-sm text-gray-900 shadow-sm">
-                      <option value="">Choose vehicle type</option>
-                      <option value="motorcycle">🏍️ Motorcycle</option>
-                      <option value="van">🚐 Van</option>
-                      <option value="truck">🚛 Truck</option>
-                      <option value="pickup">🛻 Pickup Truck</option>
-                      <option value="trailer">🚜 Trailer</option>
-                    </select>
-                    <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
-                      <svg className="h-5 w-5 text-gray-400 group-focus-within:text-[#EB9900] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Book Now Button */}
-                <button className="w-full bg-gradient-to-r from-[#EB9900] to-[#ff8800] hover:from-[#d68600] hover:to-[#e07700] text-white py-3 rounded-xl font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-[1.02] mt-4 relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                  <span className="relative flex items-center justify-center space-x-2">
-                    <span>Book Your Ride</span>
-                    <svg className="h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
+      {/* Mobile Booking Form Section - Separate section below hero */}
+      <div className="lg:hidden bg-gray-50 py-6">
+        <div className="max-w-md mx-auto px-4 flex justify-center items-center">
+          <BookingFormCard />
         </div>
       </div>
     </div>
@@ -404,12 +436,7 @@ const FAQSection = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="flex items-center justify-center mb-6">
-            <span className="text-brand-orange font-semibold text-lg">Questions? Look here.</span>
-          </div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Everything you need to know about our logistics services.
-          </p>
+          <h1 className="text-4xl font-bold text-gray-800">Frequently Asked Questions</h1>
         </div>
 
         {/* FAQ Items */}

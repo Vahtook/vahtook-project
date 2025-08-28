@@ -173,6 +173,26 @@ export default function Footer() {
               </div>
             </a>
 
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/vahtook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="icons facebook">
+                <p className="iconName">Facebook</p>
+                <div className="icon facebook">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M18.244 2H21.5l-7.52 8.58L22 22h-7.295l-5.73-7.21L3.77 22H.5l7.977-9.1L2 2h7.295l5.23 6.58L18.244 2zM16.73 20h2.02L7.34 4H5.2l11.53 16z" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+
             {/* YouTube */}
             <div className="icons youtube">
               <p className="iconName">YouTube</p>
