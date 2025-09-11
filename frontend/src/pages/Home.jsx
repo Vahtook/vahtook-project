@@ -2,15 +2,20 @@ import React, { useState } from 'react';
 import { Shield, Clock, IndianRupee, Star, Truck, Phone } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 import backgroundImage from '../assets/Hero-orange.jpg';
-// import HomeMap from './HomeMap';
+
 // Separate Booking Form Component
 const BookingFormCard = () => {
+
+ const navigate = useNavigate();
+ const [pickup,setPickup]=useState("");
+ const [destination,setDestination]=useState("");
+ const [vehicle,setVehicle]=useState("");
+
+ 
+
   return (
     <div className="bg-white rounded-xl p-3 lg:p-5 shadow-2xl border border-white/20 max-w-[280px] sm:max-w-xs w-full lg:max-w-sm relative overflow-hidden mx-auto lg:ml-8">
       {/* Decorative Elements */}
-      
-      
-      
       <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-[#EB9900]/10 to-transparent rounded-full -translate-y-12 sm:-translate-y-16 translate-x-12 sm:translate-x-16"></div>
       <div className="absolute bottom-0 left-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-tr from-[#EB9900]/5 to-transparent rounded-full translate-y-8 sm:translate-y-12 -translate-x-8 sm:-translate-x-12"></div>
       
@@ -36,6 +41,8 @@ const BookingFormCard = () => {
             <input
               type="text"
               placeholder="Pickup location"
+              value={pickup}
+              onChange={(e)=>setPickup(e.target.value)}
               className="w-full pl-8 sm:pl-10 pr-3 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 text-xs sm:text-sm text-gray-900 bg-white/80 hover:bg-white hover:border-gray-300 placeholder-gray-400 shadow-sm"
             />
           </div>
@@ -57,34 +64,13 @@ const BookingFormCard = () => {
             <input
               type="text"
               placeholder="Destination"
+              value={destination}
+              onChange={(e)=>setDestination(e.target.value)}
               className="w-full pl-8 sm:pl-10 pr-3 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 text-xs sm:text-sm text-gray-900 bg-white/80 hover:bg-white hover:border-gray-300 placeholder-gray-400 shadow-sm"
             />
           </div>
         </div>
 
-        {/* Date and Time */}
-        <div className="space-y-1 sm:space-y-2">
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full shadow-sm"></div>
-            <label className="text-xs font-semibold text-gray-700 uppercase tracking-wider">Schedule</label>
-          </div>
-          <div className="grid grid-cols-2 gap-2 sm:gap-3">
-            <div className="relative group">
-              <input
-                type="date"
-                defaultValue={new Date().toISOString().split('T')[0]}
-                className="w-full px-2 sm:px-3 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 text-xs sm:text-sm text-gray-900 bg-white/80 hover:bg-white hover:border-gray-300 shadow-sm"
-              />
-            </div>
-            <div className="relative group">
-              <input
-                type="time"
-                defaultValue={new Date().toTimeString().slice(0,5)}
-                className="w-full px-2 sm:px-3 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 text-xs sm:text-sm text-gray-900 bg-white/80 hover:bg-white hover:border-gray-300 shadow-sm"
-              />
-            </div>
-          </div>
-        </div>
 
         {/* Vehicle Type */}
         <div className="space-y-1 sm:space-y-2">
@@ -98,13 +84,16 @@ const BookingFormCard = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM21 17a2 2 0 11-4 0 2 2 0 014 0zM7 9l4-4.5L15 9m4 0h1a1 1 0 011 1v6a1 1 0 01-1 1h-1M7 9H6a1 1 0 00-1 1v6a1 1 0 001 1h1m0-8V6a1 1 0 011-1h4a1 1 0 011 1v3M7 9h8" />
               </svg>
             </div>
-            <select className="w-full pl-8 sm:pl-10 pr-8 sm:pr-9 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 appearance-none bg-white/80 hover:bg-white hover:border-gray-300 text-xs sm:text-sm text-gray-900 shadow-sm">
+            <select 
+            value={vehicle}
+            onChange={(e)=>setVehicle(e.target.value)}
+            className="w-full pl-8 sm:pl-10 pr-8 sm:pr-9 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 appearance-none bg-white/80 hover:bg-white hover:border-gray-300 text-xs sm:text-sm text-gray-900 shadow-sm">
               <option value="">Choose vehicle type</option>
-              <option value="motorcycle">🏍️ Motorcycle</option>
+              <option value="motorcycle">Bike</option>
               
-              <option value="truck">🚛 Truck</option>
-              <option value="pickup">🛻 Pickup Truck</option>
-              <option value="trailer">🚜 Trailer</option>
+              <option value="truck">Three-wheeler</option>
+              <option value="pickup">Tata Ace</option>
+              <option value="trailer">Four-Wheeler</option> 
             </select>
             <div className="absolute inset-y-0 right-0 pr-3 sm:pr-4 flex items-center pointer-events-none">
               <svg className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 group-focus-within:text-[#EB9900] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -115,7 +104,21 @@ const BookingFormCard = () => {
         </div>
 
         {/* Book Now Button */}
-        <button className="w-full bg-gradient-to-r from-[#EB9900] to-[#ff8800] hover:from-[#d68600] hover:to-[#e07700] text-white py-2 sm:py-3 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-[1.02] mt-2 sm:mt-4 relative overflow-hidden group">
+        <button 
+        onClick={()=>{
+          if(!pickup||!destination){
+            alert("Please enter both Pickup and Destination!");
+            return;
+          }
+          
+        
+          navigate("/booking-ride",{
+          state:{pickup:pickup
+            ,destination:destination
+            ,vehicle:vehicle,
+          }
+        });}}
+        className="w-full bg-gradient-to-r from-[#EB9900] to-[#ff8800] hover:from-[#d68600] hover:to-[#e07700] text-white py-2 sm:py-3 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-[1.02] mt-2 sm:mt-4 relative overflow-hidden group">
           <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
           <span className="relative flex items-center justify-center space-x-2">
             <span>Book Your Ride</span>

@@ -10,6 +10,8 @@ import DriverPartnerForm from "./pages/DriverPartner";
 import Contact from "./pages/Contact";
 import BusinessPartner from "./pages/BuisnessPartner";
 import WhatsAppButton from "./components/WhatsAppButton";
+import BookingRide from "./pages/BookingRide";
+import ThankYou from "./pages/ThankYou";
 
 
 function App() {
@@ -24,7 +26,10 @@ function App() {
         <Route path="/driver-partner" element={<DriverPartnerForm />} />
         <Route path="/support" element={<Contact />} />
         <Route path="/career" element={<Career />} />
-        <Route path="/business-partner" element={<BusinessPartner />} /> 
+        <Route path="/business-partner" element={<BusinessPartner />}/ >
+         <Route path="/booking-ride" element={<BookingRide />}/> 
+         <Route path="/thank-you" element={<ThankYou />}/> 
+
         
       </Routes>
 
