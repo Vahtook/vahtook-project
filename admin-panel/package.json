@@ -1,0 +1,45 @@
+{
+  "name": "vahtook-admin-panel",
+  "description": "Vahtook Logistics Admin Panel - A comprehensive order management system with real-time updates, status tracking, and dashboard analytics",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "author": "Vahtook Development Team",
+  "keywords": ["logistics", "admin-panel", "order-management", "real-time", "react", "vite"],
+  "scripts": {
+    "dev": "vite --port 3001 --host",
+    "start": "npm run dev",
+    "build": "vite build",
+    "build:prod": "NODE_ENV=production vite build",
+    "preview": "vite preview --port 3001",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext js,jsx --fix",
+    "clean": "rm -rf node_modules dist .vite",
+    "test": "echo 'No tests configured yet'"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "lucide-react": "^0.544.0",
+    "node-fetch": "^3.3.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-hot-toast": "^2.6.0",
+    "react-router-dom": "^7.9.1",
+    "socket.io": "^4.8.1",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@tailwindcss/forms": "^0.5.10",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.35.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.4.0",
+    "postcss": "^8.5.6",
+    "vite": "^7.1.6"
+  }
+}

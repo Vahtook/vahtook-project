@@ -68,13 +68,31 @@ export default function BookingRide() {
   // ✅ validation before booking
   function handleBooking() {
     const isPickupComplete =
-      address.pickup.name && address.pickup.phone && address.pickup.location;
+      address.pickup.name?.trim() && address.pickup.phone?.trim() && address.pickup.location?.trim();
 
     const isDestinationComplete =
-      address.destination.name && address.destination.phone && address.destination.location;
+      address.destination.name?.trim() && address.destination.phone?.trim() && address.destination.location?.trim();
 
-    if (!isPickupComplete || !isDestinationComplete || !selectedOption || !vehicleType) {
-      setErrorMsg("⚠️ Please fill all details before booking.");
+    // More specific error messages
+    const missingFields = [];
+    
+    if (!isPickupComplete) {
+      if (!address.pickup.name?.trim()) missingFields.push("Pickup Name");
+      if (!address.pickup.phone?.trim()) missingFields.push("Pickup Phone");
+      if (!address.pickup.location?.trim()) missingFields.push("Pickup Location");
+    }
+    
+    if (!isDestinationComplete) {
+      if (!address.destination.name?.trim()) missingFields.push("Destination Name");
+      if (!address.destination.phone?.trim()) missingFields.push("Destination Phone");
+      if (!address.destination.location?.trim()) missingFields.push("Destination Location");
+    }
+    
+    if (!selectedOption?.trim()) missingFields.push("Goods Type");
+    if (!vehicleType?.trim()) missingFields.push("Vehicle Type");
+
+    if (missingFields.length > 0) {
+      setErrorMsg(`⚠️ Please fill the following: ${missingFields.join(", ")}`);
       return;
     }
 
@@ -85,6 +103,7 @@ export default function BookingRide() {
         address,
         selectedOption,
         vehicleType,
+        value,
       },
     });
   }

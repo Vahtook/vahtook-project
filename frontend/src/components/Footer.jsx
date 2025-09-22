@@ -72,6 +72,16 @@ export default function Footer() {
                 Terms of service
               </a>
             </li>
+            <li>
+              <a 
+                href="http://localhost:3001" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-[#ff9d00] transition"
+              >
+                Admin Panel
+              </a>
+            </li>
           </ul>
         </div>
 
