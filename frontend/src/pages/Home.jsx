@@ -4,14 +4,18 @@ import { useNavigate } from 'react-router-dom';
 import backgroundImage from '../assets/Hero-orange.jpg';
 
 // Separate Booking Form Component
+// import React, { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import MapView from './MapView.jsx';
+
+
+// import { useNavigate } from 'react-router-dom';
+
 const BookingFormCard = () => {
-
- const navigate = useNavigate();
- const [pickup,setPickup]=useState("");
- const [destination,setDestination]=useState("");
- const [vehicle,setVehicle]=useState("");
-
- 
+  const navigate = useNavigate();
+  const [pickup, setPickup] = useState('');
+  const [destination, setDestination] = useState('');
+  const [vehicle, setVehicle] = useState('');
 
   return (
     <div className="bg-white rounded-xl p-3 lg:p-5 shadow-2xl border border-white/20 max-w-[280px] sm:max-w-xs w-full lg:max-w-sm relative overflow-hidden mx-auto lg:ml-8">
@@ -24,6 +28,7 @@ const BookingFormCard = () => {
         <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-1">Quick Booking</h3>
         <p className="text-xs text-gray-600">Get your ride in minutes</p>
       </div>
+
       <div className="space-y-2 sm:space-y-3 relative z-10">
         {/* Pickup Location */}
         <div className="space-y-1 sm:space-y-2">
@@ -71,7 +76,6 @@ const BookingFormCard = () => {
           </div>
         </div>
 
-
         {/* Vehicle Type */}
         <div className="space-y-1 sm:space-y-2">
           <div className="flex items-center space-x-2">
@@ -85,15 +89,15 @@ const BookingFormCard = () => {
               </svg>
             </div>
             <select 
-            value={vehicle}
-            onChange={(e)=>setVehicle(e.target.value)}
-            className="w-full pl-8 sm:pl-10 pr-8 sm:pr-9 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 appearance-none bg-white/80 hover:bg-white hover:border-gray-300 text-xs sm:text-sm text-gray-900 shadow-sm">
+              value={vehicle}
+              onChange={(e)=>setVehicle(e.target.value)}
+              className="w-full pl-8 sm:pl-10 pr-8 sm:pr-9 py-2 sm:py-2.5 border-2 border-gray-200 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-[#EB9900]/20 focus:border-[#EB9900] outline-none transition-all duration-200 appearance-none bg-white/80 hover:bg-white hover:border-gray-300 text-xs sm:text-sm text-gray-900 shadow-sm"
+            >
               <option value="">Choose vehicle type</option>
               <option value="motorcycle">Bike</option>
-              
               <option value="truck">Three-wheeler</option>
               <option value="pickup">Tata Ace</option>
-              <option value="trailer">Four-Wheeler</option> 
+              <option value="trailer">Four-Wheeler</option>
             </select>
             <div className="absolute inset-y-0 right-0 pr-3 sm:pr-4 flex items-center pointer-events-none">
               <svg className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 group-focus-within:text-[#EB9900] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,21 +108,18 @@ const BookingFormCard = () => {
         </div>
 
         {/* Book Now Button */}
-        <button 
-        onClick={()=>{
-          if(!pickup||!destination){
-            alert("Please enter both Pickup and Destination!");
-            return;
-          }
-          
-        
-          navigate("/booking-ride",{
-          state:{pickup:pickup
-            ,destination:destination
-            ,vehicle:vehicle,
-          }
-        });}}
-        className="w-full bg-gradient-to-r from-[#EB9900] to-[#ff8800] hover:from-[#d68600] hover:to-[#e07700] text-white py-2 sm:py-3 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-[1.02] mt-2 sm:mt-4 relative overflow-hidden group">
+        <button
+          onClick={() => {
+            if (!pickup || !destination) {
+              alert("Please enter both Pickup and Destination!");
+              return;
+            }
+            navigate("/booking-ride", {
+              state: { pickup, destination, vehicle }
+            });
+          }}
+          className="w-full bg-gradient-to-r from-[#EB9900] to-[#ff8800] hover:from-[#d68600] hover:to-[#e07700] text-white py-2 sm:py-3 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-[1.02] mt-2 sm:mt-4 relative overflow-hidden group"
+        >
           <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
           <span className="relative flex items-center justify-center space-x-2">
             <span>Book Your Ride</span>
@@ -131,6 +132,12 @@ const BookingFormCard = () => {
     </div>
   );
 };
+
+// export default BookingFormCard;
+
+
+// export default BookingFormCard;
+
 
 const HeroSection = () => {
   return (
@@ -168,7 +175,7 @@ const HeroSection = () => {
             </div>
 
             {/* Right Column - Booking Form (Desktop Only) */}
-            <div className="relative pl-8 xl:pl-12 flex justify-end -mt-16">
+             <div className="relative pl-8 xl:pl-12 flex justify-end -mt-16">
               <BookingFormCard />
             </div>
           </div>
@@ -192,7 +199,9 @@ const HeroSection = () => {
       {/* Mobile Booking Form Section - Separate section below hero */}
       <div className="lg:hidden bg-gray-50 py-6">
         <div className="max-w-md mx-auto px-4 flex justify-center items-center">
-          <BookingFormCard />
+
+          
+           <BookingFormCard /> 
         </div>
       </div>
     </div>

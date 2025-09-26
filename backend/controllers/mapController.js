@@ -1,54 +1,45 @@
+const { olaGet, extractFirstLatLng } = require('../services/olaMapsService');
 
-const fetch = (...args) =>
-  import("node-fetch").then(({ default: fetch }) => fetch(...args));
+exports.health = (_req, res) => {
+  res.json({ ok: true, provider: 'Ola Maps', time: new Date().toISOString() });
+};
 
-// ✅ Geocode helper
-async function geocode(place) {
-  const res = await fetch(
-    `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
-      place
-    )}`
-  );
-  const data = await res.json();
-  if (data.length > 0) {
-    return [parseFloat(data[0].lon), parseFloat(data[0].lat)];
-  }
-  return null;
-}
-
-// ✅ Route controller function
-const getRoute = async (req, res) => {
-  const { pickup, destination } = req.body;
-
+exports.autocomplete = async (req, res) => {
   try {
-    const pickupCoords = await geocode(pickup);
-    const destCoords = await geocode(destination);
+    const input = (req.query.input || '').trim();
+    if (!input) return res.status(400).json({ success: false, message: 'Query param "input" is required' });
 
-    if (!pickupCoords || !destCoords) {
-      return res.json({ error: "Invalid locations" });
-    }
-
-    // Use OSRM public API for routing
-    const routeRes = await fetch(
-      `http://router.project-osrm.org/route/v1/driving/${pickupCoords[0]},${pickupCoords[1]};${destCoords[0]},${destCoords[1]}?overview=full&geometries=geojson`
-    );
-    const routeData = await routeRes.json();
-
-    if (routeData.routes.length > 0) {
-      const coords = routeData.routes[0].geometry.coordinates.map((c) => [
-        c[1],
-        c[0],
-      ]);
-      res.json({ route: coords });
-    } else {
-      res.json({ error: "Route not found" });
-    }
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Server error" });
+    const data = await olaGet('/places/v1/autocomplete', { input });
+    res.json({ success: true, data });
+  } catch (e) {
+    res.status(e.status || 500).json({ success: false, message: e.message, details: e.data || null });
   }
 };
 
-module.exports = {
-  getRoute
+exports.geocode = async (req, res) => {
+  try {
+    const address = (req.query.address || '').trim();
+    if (!address) return res.status(400).json({ success: false, message: 'Query param "address" is required' });
+
+    const data = await olaGet('/geocoding/v1/geocode', { address });
+    const point = extractFirstLatLng({ data }) || extractFirstLatLng(data);
+    res.json({ success: true, point, data });
+  } catch (e) {
+    res.status(e.status || 500).json({ success: false, message: e.message, details: e.data || null });
+  }
+};
+
+exports.reverse = async (req, res) => {
+  try {
+    const lat = Number(req.query.lat);
+    const lng = Number(req.query.lng);
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+      return res.status(400).json({ success: false, message: 'Query params "lat" and "lng" must be valid numbers' });
+    }
+
+    const data = await olaGet('/geocoding/v1/reverse', { lat, lng });
+    res.json({ success: true, data });
+  } catch (e) {
+    res.status(e.status || 500).json({ success: false, message: e.message, details: e.data || null });
+  }
 };

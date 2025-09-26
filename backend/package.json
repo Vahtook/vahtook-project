@@ -5,7 +5,16 @@
   "main": "server.js",
   "private": true,
   "author": "Vahtook Development Team",
-  "keywords": ["nodejs", "express", "mysql", "jwt", "sse", "logistics", "api", "order-management"],
+  "keywords": [
+    "nodejs",
+    "express",
+    "mysql",
+    "jwt",
+    "sse",
+    "logistics",
+    "api",
+    "order-management"
+  ],
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js --ignore 'public/*' --delay 2",
@@ -16,7 +25,7 @@
     "clean": "rm -rf node_modules logs/*"
   },
   "dependencies": {
-    "axios": "^1.6.0",
+    "axios": "^1.12.2",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",

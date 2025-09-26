@@ -1,19 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import cashImg from "../assets/cash.png";
 import bikeImg from "../assets/bike.png";
 import threeWheeler from "../assets/threeWheeler.png";
 import truck from "../assets/truck.png";
-import fourWheeler from "../assets/fourWheeler.png"
+import fourWheeler from "../assets/fourWheeler.png";
 import ThankYou from "./ThankYou";
 import { useLocation, useNavigate } from "react-router-dom";
+import MapView from "../components/MapView.jsx";
+
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000";
 
 export default function BookingRide() {
+  
   const [editingType, setEditingType] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "", location: "" });
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
-  const [errorMsg, setErrorMsg] = useState(""); // ✅ error state
+  const [errorMsg, setErrorMsg] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const bookingData = location.state || {};
@@ -27,27 +31,17 @@ export default function BookingRide() {
     destination: { name: "", phone: "", location: bookingData.destination || "" },
   });
 
+  // --- Map state ---
+  const [pickupCoord, setPickupCoord] = useState(null);     // {lat,lng}
+  const [deliveryCoord, setDeliveryCoord] = useState(null); // {lat,lng}
+  const [geoLoading, setGeoLoading] = useState(false);
+  const [geoMsg, setGeoMsg] = useState("");
+
   const vehicles = {
-    bike: {
-      img: bikeImg,
-      weight: "30 Kg",
-      dimensions: "40cm x 40cm x 40cm",
-    },
-    auto: {
-      img: threeWheeler,
-      weight: "500 Kg",
-      dimensions: "5ft x 4.5ft x 5ft",
-    },
-    truck: {
-      img: truck,
-      weight: "750 Kg",
-      dimensions: "7ft x 4.5ft x 5.5ft",
-    },
-    fourWheeler: {
-      img: fourWheeler,
-      weight: "1250 Kg",
-      dimensions: "8ft x 5.5ft x 5ft",
-    },
+    bike: { img: bikeImg, weight: "30 Kg", dimensions: "40cm x 40cm x 40cm" },
+    auto: { img: threeWheeler, weight: "500 Kg", dimensions: "5ft x 4.5ft x 5ft" },
+    truck: { img: truck, weight: "750 Kg", dimensions: "7ft x 4.5ft x 5.5ft" },
+    fourWheeler: { img: fourWheeler, weight: "1250 Kg", dimensions: "8ft x 5.5ft x 5ft" },
   };
 
   function editAddress(type) {
@@ -57,37 +51,34 @@ export default function BookingRide() {
   }
 
   function saveAddress() {
-    setAddress((prev) => ({
-      ...prev,
-      [editingType]: formData,
-    }));
+    setAddress((prev) => ({ ...prev, [editingType]: formData }));
     setShowForm(false);
     setEditingType(null);
   }
 
-  // ✅ validation before booking
+  // ---- Validation before booking ----
   function handleBooking() {
     const isPickupComplete =
-      address.pickup.name?.trim() && address.pickup.phone?.trim() && address.pickup.location?.trim();
+      address.pickup.name?.trim() &&
+      address.pickup.phone?.trim() &&
+      address.pickup.location?.trim();
 
     const isDestinationComplete =
-      address.destination.name?.trim() && address.destination.phone?.trim() && address.destination.location?.trim();
+      address.destination.name?.trim() &&
+      address.destination.phone?.trim() &&
+      address.destination.location?.trim();
 
-    // More specific error messages
     const missingFields = [];
-    
     if (!isPickupComplete) {
       if (!address.pickup.name?.trim()) missingFields.push("Pickup Name");
       if (!address.pickup.phone?.trim()) missingFields.push("Pickup Phone");
       if (!address.pickup.location?.trim()) missingFields.push("Pickup Location");
     }
-    
     if (!isDestinationComplete) {
       if (!address.destination.name?.trim()) missingFields.push("Destination Name");
       if (!address.destination.phone?.trim()) missingFields.push("Destination Phone");
       if (!address.destination.location?.trim()) missingFields.push("Destination Location");
     }
-    
     if (!selectedOption?.trim()) missingFields.push("Goods Type");
     if (!vehicleType?.trim()) missingFields.push("Vehicle Type");
 
@@ -96,15 +87,9 @@ export default function BookingRide() {
       return;
     }
 
-    setErrorMsg(""); // clear error when valid
-
+    setErrorMsg("");
     navigate("/thank-you", {
-      state: {
-        address,
-        selectedOption,
-        vehicleType,
-        value,
-      },
+      state: { address, selectedOption, vehicleType, value },
     });
   }
 
@@ -116,6 +101,52 @@ export default function BookingRide() {
     "Perishables & Fragile Items",
     "Others",
   ];
+
+  // ---- Geocode addresses whenever they change (debounced) ----
+  useEffect(() => {
+    const pickupText = address?.pickup?.location?.trim();
+    const destText = address?.destination?.location?.trim();
+
+    if (!pickupText && !destText) {
+      setPickupCoord(null);
+      setDeliveryCoord(null);
+      setGeoMsg("");
+      return;
+    }
+
+    const geocode = async (text) => {
+      const u = new URL(`${API_BASE}/api/map/geocode`);
+      u.searchParams.set("address", text);
+      const res = await fetch(u.toString());
+      const j = await res.json();
+      if (!res.ok || !j.success) throw new Error(j.message || `Geocode failed (${res.status})`);
+      return j.point || null;
+    };
+
+    const id = setTimeout(async () => {
+      setGeoLoading(true);
+      setGeoMsg("");
+      try {
+        const [p, d] = await Promise.all([
+          pickupText ? geocode(pickupText) : Promise.resolve(null),
+          destText ? geocode(destText) : Promise.resolve(null),
+        ]);
+        setPickupCoord(p || null);
+        setDeliveryCoord(d || null);
+
+        let msg = "";
+        if (pickupText && !p) msg += `Couldn't locate pickup: "${pickupText}"`;
+        if (destText && !d) msg += (msg ? " | " : "") + `Couldn't locate destination: "${destText}"`;
+        setGeoMsg(msg);
+      } catch (e) {
+        setGeoMsg(e.message || "Failed to locate addresses.");
+      } finally {
+        setGeoLoading(false);
+      }
+    }, 400); // debounce
+
+    return () => clearTimeout(id);
+  }, [address?.pickup?.location, address?.destination?.location]);
 
   return (
     <>
@@ -327,12 +358,8 @@ export default function BookingRide() {
                     alt={vehicleType}
                     style={{ height: "auto", width: "150px", margin: "10px auto" }}
                   />
-                  <p>
-                    <strong>Capacity:</strong> {vehicles[vehicleType].weight}
-                  </p>
-                  <p>
-                    <strong>Dimensions:</strong> {vehicles[vehicleType].dimensions}
-                  </p>
+                  <p><strong>Capacity:</strong> {vehicles[vehicleType].weight}</p>
+                  <p><strong>Dimensions:</strong> {vehicles[vehicleType].dimensions}</p>
                 </div>
               ) : (
                 <div
@@ -354,6 +381,29 @@ export default function BookingRide() {
             </div>
           </div>
 
+          {/* --- MAP CONTAINER --- */}
+          <div style={{ margin: "10px 20px" }}>
+            <h4 style={{ margin: "8px 0 6px 0", fontWeight: 600 }}>Pickup & Destination Map</h4>
+            <div style={{ height: 360, borderRadius: 12, overflow: "hidden", border: "1px solid #eee" }}>
+              {geoLoading ? (
+                <div className="w-full h-full flex items-center justify-center text-gray-500">
+                  Locating on map…
+                </div>
+              ) : (pickupCoord || deliveryCoord) ? (
+                <MapView pickup={pickupCoord} delivery={deliveryCoord} />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center text-gray-400">
+                  Enter addresses to preview on map
+                </div>
+              )}
+            </div>
+            {geoMsg && (
+              <div style={{ marginTop: 6, color: "#b91c1c", fontSize: 12 }}>
+                {geoMsg}
+              </div>
+            )}
+          </div>
+
           {/* border */}
           <div style={{ height: "1px", border: "1px solid lightgray", margin: "10px 20px" }}></div>
 
@@ -362,12 +412,7 @@ export default function BookingRide() {
             <img
               src={cashImg}
               alt="cash img"
-              style={{
-                borderRadius: "80%",
-                width: "28px",
-                height: "28px",
-                marginTop: "10px",
-              }}
+              style={{ borderRadius: "80%", width: "28px", height: "28px", marginTop: "10px" }}
             />
             <div>
               <p>Payment method </p>

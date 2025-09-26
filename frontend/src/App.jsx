@@ -1,5 +1,4 @@
 
-
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -26,7 +25,7 @@ function App() {
         <Route path="/driver-partner" element={<DriverPartnerForm />} />
         <Route path="/support" element={<Contact />} />
         <Route path="/career" element={<Career />} />
-        <Route path="/business-partner" element={<BusinessPartner />}/ >
+        <Route path="/business-partner" element={<BusinessPartner />} />
          <Route path="/booking-ride" element={<BookingRide />}/> 
          <Route path="/thank-you" element={<ThankYou />}/> 
 
